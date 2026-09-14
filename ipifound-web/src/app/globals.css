@@ -2,12 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #00373e;
+  --foreground: #333441;
+  --hero: #f4ec4a;
   --mist: #d3dce7;
-  --field: #e6ecf3;
-  --button: #596471;
-  --ink: #00373e;
-  --footer-ink: #1a202c;
+  --field: #ffffff;
+  --button: #f9ff58;
+  --ink: #333441;
+  --footer-ink: #ffffff;
+  --footer: #333441;
+  --contact: #f3ec4e;
+  --card-blue: #e9f7ff;
+  --line: #dee2e6;
+  --radio: #0080fe;
   --lamp: #596471;
   --bulb: #f9ff58;
   --lucky-yellow: #f9ff58;
@@ -18,16 +24,23 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-hero: var(--hero);
   --color-mist: var(--mist);
   --color-field: var(--field);
   --color-button: var(--button);
   --color-ink: var(--ink);
   --color-footer-ink: var(--footer-ink);
+  --color-footer: var(--footer);
+  --color-contact: var(--contact);
+  --color-card-blue: var(--card-blue);
+  --color-line: var(--line);
+  --color-radio: var(--radio);
   --color-lucky-yellow: var(--lucky-yellow);
   --color-lucky-pink: var(--lucky-pink);
   --color-card: var(--card);
   --font-display: var(--font-josefin), var(--font-noto);
-  --font-nav: var(--font-bricolage);
+  --font-nav: var(--font-blinker), var(--font-bricolage);
+  --font-hand: var(--font-kuaile), var(--font-noto);
   --font-footer: var(--font-jakarta);
   --font-contact: var(--font-inter);
   --font-cjk: var(--font-noto);
@@ -47,7 +60,12 @@ body {
 
 ::selection {
   background: #f9ff58;
-  color: #00373e;
+  color: #333441;
+}
+
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-enclosure {
+  display: none !important;
 }
 
 @media (max-width: 1439px) {

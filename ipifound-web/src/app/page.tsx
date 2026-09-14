@@ -1,13 +1,11 @@
-import { BirthdayFilter } from "@/components/home/BirthdayFilter";
+import { BrandMatchers } from "@/components/home/BrandMatchers";
 import { Hero } from "@/components/home/Hero";
-import { ZodiacFilter } from "@/components/home/ZodiacFilter";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <BirthdayFilter />
-      <ZodiacFilter />
+      <BrandMatchers />
     </>
   );
 }

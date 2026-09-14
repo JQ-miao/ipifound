@@ -1,10 +1,8 @@
 import { SiteHeader, type NavId } from "@/components/home/SiteHeader";
-import { LampDecor } from "@/components/layout/LampDecor";
 
 export function PageHeader({ active = "home" }: { active?: NavId }) {
   return (
-    <section className="relative h-[159px] overflow-hidden">
-      <LampDecor />
+    <section className="relative overflow-hidden bg-white">
       <div className="relative">
         <SiteHeader active={active} />
       </div>

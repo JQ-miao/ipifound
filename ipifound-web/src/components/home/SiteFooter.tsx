@@ -2,8 +2,8 @@ const COLUMNS = [
   {
     title: "Home",
     links: [
-      { href: "/#birthday", label: "生日筛选器" },
       { href: "/#zodiac", label: "生肖筛选器" },
+      { href: "/#birthday", label: "生日筛选器" },
       { href: "/#contact", label: "联系我们" },
     ],
   },
@@ -27,76 +27,63 @@ const COLUMNS = [
       { href: "/projects?cat=ui", label: "UI案例" },
       { href: "/projects?cat=creative", label: "文创案例" },
       { href: "/projects?cat=space", label: "空间布局案例" },
+      { href: "/#contact", label: "联系我们" },
     ],
   },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="font-footer bg-mist text-footer-ink">
-      <div className="mx-auto flex max-w-[1440px] px-[60px] pb-[76px] pt-[94px]">
-        <div className="w-[562px] shrink-0">
-          <p className="text-[32px] font-medium tracking-[-0.96px] leading-[1.5]">
-            iPiFound&nbsp;&nbsp;X&nbsp;&nbsp;鲲图智权
-          </p>
-          <p className="mt-[19px] text-[16px] font-medium tracking-[-0.32px] leading-[1.5]">
-            slogan
-          </p>
-          <div className="mt-[38px] flex items-start gap-[30px]">
-            <SocialMark label="小红书" />
-            <SocialMark label="企业微信" />
+    <footer className="font-footer relative overflow-hidden bg-footer text-footer-ink">
+      <div className="relative mx-auto flex max-w-[1440px] justify-between gap-[48px] px-[124px] pb-[48px] pt-[60px]">
+        <div className="w-[455px] shrink-0">
+          <a href="/#home" className="relative block h-[64px] w-[220px]">
+            <img
+              src="/figma/logo-combination.svg"
+              alt="iPiFound × 鲲图智权"
+              className="absolute inset-0 size-full max-w-none object-contain object-left"
+              width={220}
+              height={64}
+            />
+          </a>
+
+          <div className="mt-[36px]">
+            <div className="h-px w-full bg-lucky-yellow" />
+            <p className="py-[12px] text-[14px] font-medium leading-[1.5] text-lucky-yellow">
+              灵感现货 · 即选即用 —— iPiFound 设计美学与鲲图智权知产守护，助力你的品牌轻装上阵，快人一步。
+            </p>
+            <div className="h-px w-full bg-lucky-yellow" />
           </div>
+
+          <p className="mt-[20px] text-[14px] font-medium leading-[21px] text-white/90">
+            iPiFound × 鲲图智权，将设计美学与知识产权保护深度融合。我们打破
+            &quot;从零构思&quot;的漫长等待，量身匹配灵感线索——让品牌方案可视、可选、可定制，并自带知产护航。选中心动的那一款，即刻联系我们，开启专属于你的品牌焕新之旅。
+          </p>
+
+          <p className="mt-[68px] text-[14px] font-medium leading-[24px] text-white/80">
+            ©2026 iPiFound &amp; kuntuzhiquan. All rights reserved
+          </p>
         </div>
 
-        {COLUMNS.map((column, index) => (
-          <div
-            key={column.title}
-            id={column.id}
-            className={`w-[152px] shrink-0 ${index === 0 ? "" : "ml-[151px]"}`}
-          >
-            <p className="text-[20px] font-semibold tracking-[-0.4px] leading-[1.5]">
-              {column.title}
-            </p>
-            <ul className="mt-[24px] space-y-[19px] text-[16px] font-medium tracking-[-0.32px] leading-[1.2]">
-              {column.links.map((link) => (
-                <li key={`${column.title}-${link.label}`}>
-                  <a href={link.href} className="hover:text-ink">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-
-      <div className="mx-auto max-w-[1440px] px-[60px] pb-[59px]">
-        <img
-          src="/figma/footer-line.svg"
-          alt=""
-          className="h-px w-full max-w-[1320px]"
-        />
-        <p className="mt-[36px] text-center text-[16px] font-semibold tracking-[-0.32px] leading-[1.5]">
-          ©2026 Company Name. All rights reserved（怎么写）
-        </p>
+        <div className="flex w-[383px] shrink-0 justify-between pt-[4px]">
+          {COLUMNS.map((column) => (
+            <div key={column.title} id={column.id} className="w-[90px] shrink-0">
+              <p className="text-[16px] font-semibold leading-[20px] text-white">
+                {column.title}
+              </p>
+              <ul className="mt-[16px] space-y-[9px] text-[14px] font-medium leading-[1.5] text-white/85">
+                {column.links.map((link) => (
+                  <li key={`${column.title}-${link.label}`}>
+                    <a href={link.href} className="hover:text-lucky-yellow">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </footer>
-  );
-}
-
-function SocialMark({ label }: { label: string }) {
-  return (
-    <div className="flex flex-col items-center">
-      <img
-        src="/figma/social-icon.svg"
-        alt=""
-        className="h-[34px] w-[34px] overflow-visible object-cover object-top"
-        width={34}
-        height={34}
-      />
-      <span className="mt-[-2px] text-[16px] font-medium tracking-[-0.32px] text-ink">
-        {label}
-      </span>
-    </div>
   );
 }

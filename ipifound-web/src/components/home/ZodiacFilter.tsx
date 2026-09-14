@@ -1,60 +1,80 @@
 "use client";
 
 import { FindInventoryButton } from "@/components/home/FindInventoryButton";
-import { PageSection } from "@/components/layout/PageSection";
 import { ZODIACS } from "@/lib/zodiacs";
 import { useState } from "react";
 
 export function ZodiacFilter() {
-  const [selected, setSelected] = useState("tiger");
+  const [selected, setSelected] = useState<string>("");
 
   return (
-    <PageSection id="zodiac" className="pb-[90px] pt-[24px]">
-      <h2 className="text-[26px] font-bold leading-[31px] text-ink">
-        根据主理人的生肖选择最适合你的品牌方案（暂定）
-      </h2>
-      <p className="mt-[21px] text-[22px] leading-[27px] text-ink">
-        请选择你的生肖
-      </p>
+    <div id="zodiac" className="relative w-full max-w-[1000px]">
+      <div className="absolute inset-0 rounded-[40px] bg-card-blue" />
+      <img
+        src="/figma/frame-sketch-lg.svg"
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 size-full max-w-none"
+      />
 
-      <form action="/inventory/zodiac" className="mt-[55px]">
-        <fieldset className="relative">
-          <legend className="sr-only">生肖</legend>
-          <img
-            src="/figma/zodiac.png"
-            alt="十二生肖插画"
-            className="h-auto w-full max-w-[1062px]"
-            width={1063}
-            height={179}
-          />
-          <div className="relative mt-[16px] h-[17px] max-w-[1062px]">
-            {ZODIACS.map((zodiac) => (
-              <label
-                key={zodiac.id}
-                className="absolute top-0 size-[17px] -translate-x-1/2 cursor-pointer"
-                style={{ left: zodiac.left }}
-              >
-                <input
-                  type="radio"
-                  name="zodiac"
-                  value={zodiac.id}
-                  checked={selected === zodiac.id}
-                  onChange={() => setSelected(zodiac.id)}
-                  className="peer sr-only"
-                />
-                <span className="flex size-[17px] items-center justify-center rounded-[2px] border border-ink peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-ink">
-                  <span
-                    className={`block size-[7px] rounded-[1px] bg-ink ${selected === zodiac.id ? "opacity-100" : "opacity-0"}`}
-                  />
-                  <span className="sr-only">{zodiac.name}</span>
-                </span>
-              </label>
-            ))}
-          </div>
-        </fieldset>
+      <div className="relative px-[44px] pb-[48px] pt-[40px]">
+        <h3 className="text-[30px] font-bold leading-[30px] text-ink">
+          通过生肖来匹配你的品牌方案
+        </h3>
+        <p className="mt-[16px] text-[18px] leading-[18px] text-ink">
+          请选择你的生肖，或是最贴合你品牌气质的生肖，当然你也可以有你执着的选择啦~
+        </p>
 
-        <FindInventoryButton className="mt-[47px]" />
-      </form>
-    </PageSection>
+        <form action="/inventory/zodiac" className="mt-[32px]">
+          <fieldset>
+            <legend className="sr-only">生肖</legend>
+            <div className="flex items-end justify-between">
+              {ZODIACS.map((zodiac) => (
+                <label
+                  key={zodiac.id}
+                  className="flex w-[54px] cursor-pointer flex-col items-center"
+                >
+                  <span className="flex h-[118px] w-[90px] items-end justify-center">
+                    <img
+                      src={`/figma/zodiacs/${zodiac.id}.png`}
+                      alt=""
+                      className="max-h-[118px] w-auto max-w-[90px] object-contain object-bottom"
+                    />
+                  </span>
+                  <span className="font-hand mt-[12px] text-[16px] leading-none text-ink">
+                    {zodiac.name}
+                  </span>
+                  <span className="relative mt-[16px] block size-[20px]">
+                    <input
+                      type="radio"
+                      name="zodiac"
+                      value={zodiac.id}
+                      required
+                      checked={selected === zodiac.id}
+                      onChange={() => setSelected(zodiac.id)}
+                      className="peer sr-only"
+                    />
+                    <img
+                      src="/figma/radio-off.svg"
+                      alt=""
+                      aria-hidden
+                      className="absolute inset-0 size-[20px] peer-checked:hidden"
+                    />
+                    <img
+                      src="/figma/radio-on.svg"
+                      alt=""
+                      aria-hidden
+                      className="absolute inset-0 hidden size-[20px] peer-checked:block"
+                    />
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <FindInventoryButton className="mt-[28px]" />
+        </form>
+      </div>
+    </div>
   );
 }

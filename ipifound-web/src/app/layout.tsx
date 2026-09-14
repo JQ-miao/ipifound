@@ -1,11 +1,13 @@
 import { PageShell } from "@/components/layout/PageShell";
 import type { Metadata } from "next";
 import {
+  Blinker,
   Bricolage_Grotesque,
   Inter,
   Josefin_Sans,
   Noto_Sans_SC,
   Plus_Jakarta_Sans,
+  ZCOOL_KuaiLe,
 } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +15,18 @@ const josefin = Josefin_Sans({
   variable: "--font-josefin",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const blinker = Blinker({
+  variable: "--font-blinker",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const kuaile = ZCOOL_KuaiLe({
+  variable: "--font-kuaile",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const bricolage = Bricolage_Grotesque({
@@ -48,7 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="zh-CN"
-      className={`${josefin.variable} ${bricolage.variable} ${jakarta.variable} ${inter.variable} ${noto.variable} h-full antialiased`}
+      className={`${josefin.variable} ${blinker.variable} ${kuaile.variable} ${bricolage.variable} ${jakarta.variable} ${inter.variable} ${noto.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white text-ink">
         <PageShell>{children}</PageShell>

@@ -1,41 +1,64 @@
-import { LampDecor } from "@/components/layout/LampDecor";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "./SiteHeader";
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    console.log("hero mounted", { hasVideo: !!videoRef.current });
+  }, []);
+
+  function startPlayback() {
+    const video = videoRef.current;
+    console.log("hero startPlayback", { hasVideo: !!video, paused: video?.paused });
+    if (!video) return;
+    if (!video.paused && !video.ended) return;
+    if (video.ended) video.currentTime = 0;
+    void video.play().then(
+      () => console.log("hero play ok"),
+      (err) => console.log("hero play fail", String(err)),
+    );
+  }
+
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-mist"
-      style={{ minHeight: 782 }}
+      className="relative aspect-video w-full overflow-hidden bg-hero"
     >
-      <div className="pointer-events-none absolute inset-0 mx-auto max-w-[1440px]">
-        <img
-          src="/figma/spotlight.svg"
-          alt=""
-          className="absolute left-[87.5px] top-[17.5px] h-[1035.5px] w-[1280.5px] max-w-none"
-        />
-        <img
-          src="/figma/dashed-line.svg"
-          alt=""
-          className="absolute left-[804px] top-[67px] h-[509px] w-[2px] max-w-none"
-        />
-      </div>
-      <LampDecor />
+      <h1 className="sr-only">Let&apos;s found found!!</h1>
 
-      <div className="relative mx-auto max-w-[1440px]">
+      <video
+        ref={videoRef}
+        className="hero-video pointer-events-none absolute inset-0 size-full object-cover"
+        src="/videos/hero.mp4"
+        poster="/videos/hero-poster.jpg"
+        playsInline
+        preload="auto"
+        disablePictureInPicture
+        disableRemotePlayback
+        controls={false}
+        onPlay={() => setPlaying(true)}
+        onEnded={() => setPlaying(false)}
+        aria-hidden
+      />
+
+      <button
+        type="button"
+        className={
+          playing
+            ? "pointer-events-none absolute inset-0 z-10 bg-transparent"
+            : "absolute inset-0 z-10 cursor-pointer bg-transparent"
+        }
+        onPointerDown={startPlayback}
+        onClick={startPlayback}
+        aria-label="播放片头动画"
+      />
+
+      <div className="pointer-events-none relative z-20">
         <SiteHeader />
-
-        <div className="flex flex-col items-center pb-[180px] pt-[26px] text-center text-ink">
-          <h1 className="font-display text-[76px] font-normal leading-[0.9]">
-            Let&apos;s
-            <br />
-            found found!
-          </h1>
-          <p className="font-display mt-[30px] text-[325px] font-normal leading-[0.85] tracking-[-0.04em]">
-            999
-          </p>
-          <p className="mt-[9px] text-[22px] leading-[31px]">灵感现货总库存</p>
-        </div>
       </div>
     </section>
   );
