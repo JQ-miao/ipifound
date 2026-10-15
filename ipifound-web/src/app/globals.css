@@ -58,6 +58,11 @@ body {
   font-family: var(--font-cjk), var(--font-display), sans-serif;
 }
 
+.font-heading-light {
+  font-family: var(--font-noto-light), var(--font-cjk), sans-serif;
+  font-weight: 300;
+}
+
 ::selection {
   background: #f9ff58;
   color: #333441;

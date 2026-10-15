@@ -20,7 +20,7 @@ const josefin = Josefin_Sans({
 const blinker = Blinker({
   variable: "--font-blinker",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
 });
 
 const kuaile = ZCOOL_KuaiLe({
@@ -53,6 +53,12 @@ const noto = Noto_Sans_SC({
   weight: ["400", "500", "600", "700"],
 });
 
+const notoLight = Noto_Sans_SC({
+  variable: "--font-noto-light",
+  subsets: ["latin"],
+  weight: "300",
+});
+
 export const metadata: Metadata = {
   title: "iPiFound X 鲲图智权",
   description: "灵感现货总库存 — 根据生日与生肖选择最适合你的品牌方案",
@@ -62,7 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="zh-CN"
-      className={`${josefin.variable} ${blinker.variable} ${kuaile.variable} ${bricolage.variable} ${jakarta.variable} ${inter.variable} ${noto.variable} h-full antialiased`}
+      className={`${josefin.variable} ${blinker.variable} ${kuaile.variable} ${bricolage.variable} ${jakarta.variable} ${inter.variable} ${noto.variable} ${notoLight.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white text-ink">
         <PageShell>{children}</PageShell>

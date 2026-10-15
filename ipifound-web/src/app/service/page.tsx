@@ -1,4 +1,3 @@
-import { PageHeader } from "@/components/layout/PageHeader";
 import { ServiceContent } from "@/components/service/ServiceContent";
 
 export const metadata = {
@@ -7,10 +6,5 @@ export const metadata = {
 };
 
 export default function ServicePage() {
-  return (
-    <>
-      <PageHeader active="service" />
-      <ServiceContent />
-    </>
-  );
+  return <ServiceContent />;
 }

@@ -1,60 +1,112 @@
 import type { ReactNode } from "react";
 
+const CONSULTANTS = [
+  {
+    character: "/figma/contact/character-ip.png",
+    characterWidth: 100,
+    characterHeight: 114.356,
+    gap: 16,
+    title: (
+      <>
+        知识产权需求
+        <br />
+        请咨询我
+      </>
+    ),
+    codes: [
+      {
+        src: "/figma/contact/qr-ip-wechat-block.png",
+        alt: "微信客服二维码",
+      },
+      {
+        src: "/figma/contact/qr-ip-xhs-block.png",
+        alt: "小红书官方号二维码",
+      },
+    ],
+  },
+  {
+    character: "/figma/contact/character-brand.png",
+    characterWidth: 98,
+    characterHeight: 115.95,
+    gap: 18,
+    title: (
+      <>
+        品牌定制需求
+        <br />
+        找我了解
+      </>
+    ),
+    codes: [
+      {
+        src: "/figma/contact/qr-brand-wechat-block.png",
+        alt: "微信客服二维码",
+      },
+      {
+        src: "/figma/contact/qr-brand-xhs-block.png",
+        alt: "小红书官方号二维码",
+      },
+    ],
+  },
+] as const;
+
 export function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-contact text-ink">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[72px] bg-white"
-        style={{
-          clipPath:
-            "path('M0,0 H1440 V28 C1200,70 980,8 720,36 C460,64 220,12 0,40 Z')",
-        }}
+    <section id="contact" className="relative h-[412px] w-full text-ink">
+      <img
+        src="/figma/contact/wave.svg"
+        alt=""
+        width={1446.5}
+        height={418.391}
+        className="pointer-events-none absolute max-w-none"
+        style={{ left: -3.312, top: -3.131 }}
       />
 
-      <div className="relative mx-auto flex max-w-[1440px] items-start justify-between gap-[48px] px-[220px] pb-[76px] pt-[92px]">
-        <div className="w-[296px] shrink-0">
-          <p className="font-contact text-[16px] leading-[24px] text-[#d6b07a]">
-            Contact Us
-          </p>
-          <h2 className="mt-[16px] max-w-[280px] text-[40px] font-bold leading-[1.3]">
-            更多个性化需求
-            <br />
-            欢迎扫码联系
-          </h2>
-
-          <div className="mt-[28px]">
-            <div className="h-[3px] w-[280px] rounded-full bg-[#c9836a]/80" />
-            <p className="py-[12px] text-[16px] leading-[24px]">
-              在线时段 :
-              <br />
-              周一至周五9:00 - 18:00
+      <div className="relative mx-auto flex w-[1000px] items-start gap-[178px] pt-[76px]">
+        <div className="flex w-[296px] shrink-0 flex-col gap-3">
+          <div className="flex flex-col gap-4">
+            <p className="font-nav text-[24px] leading-none font-semibold text-[#dab74c]">
+              Contact Us
             </p>
-            <div className="h-[3px] w-[280px] rounded-full bg-[#c9836a]/80" />
+            <h2 className="text-[40px] leading-[1.3] font-bold">
+              更多个性化需求
+              <br />
+              欢迎扫码联系
+            </h2>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <img
+              src="/figma/contact/line.svg"
+              alt=""
+              width={296}
+              height={22.7264}
+              className="h-[22.726px] w-[296px] max-w-none"
+            />
+            <p className="text-[24px] leading-[1.5] font-bold whitespace-pre">
+              在线时段 :{"\n"}周一至周五9:00 - 18:00
+            </p>
+            <img
+              src="/figma/contact/line.svg"
+              alt=""
+              width={296}
+              height={22.7264}
+              className="h-[22.726px] w-[296px] max-w-none"
+            />
           </div>
         </div>
 
-        <div className="flex w-[526px] flex-col gap-[36px]">
-          <ConsultantRow
-            title={
-              <>
-                知识产权需求
-                <br />
-                请咨询我
-              </>
-            }
-            underline
-          />
-          <ConsultantRow
-            title={
-              <>
-                品牌定制需求
-                <br />
-                找我了解
-              </>
-            }
-            underline
-          />
+        <div className="flex w-[526px] flex-col gap-9">
+          {CONSULTANTS.map((consultant) => (
+            <ConsultantRow
+              key={consultant.character}
+              character={consultant.character}
+              characterWidth={consultant.characterWidth}
+              characterHeight={consultant.characterHeight}
+              gap={consultant.gap}
+              title={consultant.title}
+              codes={consultant.codes}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -62,46 +114,68 @@ export function Contact() {
 }
 
 function ConsultantRow({
+  character,
+  characterWidth,
+  characterHeight,
+  gap,
   title,
-  underline,
+  codes,
 }: {
+  character: string;
+  characterWidth: number;
+  characterHeight: number;
+  gap: number;
   title: ReactNode;
-  underline?: boolean;
+  codes: readonly { src: string; alt: string }[];
 }) {
   return (
-    <div className="flex items-start gap-[16px]">
-      <div className="flex w-[150px] shrink-0 flex-col justify-center pt-[30px] text-[18px] font-semibold leading-[26px]">
-        <span
-          className={
-            underline
-              ? "underline decoration-[#c9836a] decoration-2 underline-offset-[6px]"
-              : undefined
-          }
-        >
-          {title}
-        </span>
-      </div>
-      <span
-        aria-hidden
-        className="mt-[44px] inline-block size-0 border-y-[6px] border-l-[10px] border-y-transparent border-l-ink"
+    <div className="flex items-start" style={{ gap }}>
+      <img
+        src={character}
+        alt=""
+        width={characterWidth}
+        height={characterHeight}
+        className="shrink-0"
+        style={{ width: characterWidth, height: characterHeight }}
       />
-      <div className="flex items-start gap-[16px]">
-        <QrBlock title="微信客服" />
-        <QrBlock title="小红书官方号" />
-      </div>
-    </div>
-  );
-}
 
-function QrBlock({ title }: { title: string }) {
-  return (
-    <div className="flex w-[100px] flex-col items-center">
-      <div className="flex size-[100px] items-center justify-center rounded-[4px] bg-white text-center text-[12px] leading-[16px] text-ink/50">
-        {title}
-        <br />
-        二维码
+      <div className="flex items-start gap-5">
+        <div className="flex items-start">
+          <div className="relative flex h-28 w-[150px] items-center pr-5 pl-2.5">
+            <p className="font-hand text-[20px] leading-[1.3] whitespace-nowrap">
+              {title}
+            </p>
+            <img
+              src="/figma/contact/underline.svg"
+              alt=""
+              width={119.913}
+              height={32.156}
+              className="pointer-events-none absolute max-w-none"
+              style={{ left: 8.58, top: 53.41 }}
+            />
+          </div>
+          <img
+            src="/figma/contact/arrow.svg"
+            alt=""
+            width={26.123}
+            height={112}
+            className="h-28 w-[26.123px] max-w-none shrink-0"
+          />
+        </div>
+
+        <div className="flex items-start gap-4">
+          {codes.map((code) => (
+            <img
+              key={code.src}
+              src={code.src}
+              alt={code.alt}
+              width={100}
+              height={124}
+              className="h-[124px] w-[100px]"
+            />
+          ))}
+        </div>
       </div>
-      <p className="mt-[8px] text-center text-[14px] leading-[16px]">{title}</p>
     </div>
   );
 }

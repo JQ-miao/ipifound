@@ -34,44 +34,100 @@ const COLUMNS = [
 
 export function SiteFooter() {
   return (
-    <footer className="font-footer relative overflow-hidden bg-footer text-footer-ink">
-      <div className="relative mx-auto flex max-w-[1440px] justify-between gap-[48px] px-[124px] pb-[48px] pt-[60px]">
-        <div className="w-[455px] shrink-0">
-          <a href="/#home" className="relative block h-[64px] w-[220px]">
-            <img
-              src="/figma/logo-combination.svg"
-              alt="iPiFound × 鲲图智权"
-              className="absolute inset-0 size-full max-w-none object-contain object-left"
-              width={220}
-              height={64}
-            />
-          </a>
+    <footer className="relative h-[439px] overflow-hidden bg-footer text-white">
+      <img
+        src="/figma/footer/scribble.svg"
+        alt=""
+        width={544.5}
+        height={324}
+        className="pointer-events-none absolute top-0 max-w-none"
+        style={{ left: 612.25 }}
+      />
+      <img
+        src="/figma/footer/lamp.svg"
+        alt=""
+        width={102.711}
+        height={113.235}
+        className="pointer-events-none absolute max-w-none"
+        style={{ left: 1190.61, top: 275.383 }}
+      />
+      <img
+        src="/figma/footer/mascot-a.svg"
+        alt=""
+        width={60}
+        height={42.555}
+        className="pointer-events-none absolute max-w-none"
+        style={{ left: 582.37, top: 351 }}
+      />
+      <img
+        src="/figma/footer/mascot-b.svg"
+        alt=""
+        width={49.702}
+        height={33.738}
+        className="pointer-events-none absolute max-w-none"
+        style={{
+          left: 527.38,
+          top: 358.28,
+          transform: "rotate(-4.71deg)",
+        }}
+      />
 
-          <div className="mt-[36px]">
-            <div className="h-px w-full bg-lucky-yellow" />
-            <p className="py-[12px] text-[14px] font-medium leading-[1.5] text-lucky-yellow">
-              灵感现货 · 即选即用 —— iPiFound 设计美学与鲲图智权知产守护，助力你的品牌轻装上阵，快人一步。
-            </p>
-            <div className="h-px w-full bg-lucky-yellow" />
+      <div className="relative flex items-start gap-[354px] px-[124px] pt-[60px]">
+        <div className="flex w-[455px] shrink-0 flex-col gap-[68px]">
+          <div className="flex flex-col gap-9">
+            <a href="/#home" className="block h-7 w-[279px]">
+              <img
+                src="/figma/footer/logo.svg"
+                alt="iPiFound × 鲲图智权"
+                width={279}
+                height={28}
+                className="h-7 w-[279px] max-w-none"
+              />
+            </a>
+
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-3">
+                <img
+                  src="/figma/footer/rule.svg"
+                  alt=""
+                  width={456.458}
+                  height={2.289}
+                  className="h-[2.289px] w-[456.458px] max-w-none"
+                />
+                <p className="text-[18px] leading-[1.5] font-bold text-lucky-yellow">
+                  灵感现货 · 即选即用 —— iPiFound
+                  设计美学与鲲图智权知产守护，助力你的品牌轻装上阵，快人一步。
+                </p>
+                <img
+                  src="/figma/footer/rule.svg"
+                  alt=""
+                  width={456.458}
+                  height={2.289}
+                  className="h-[2.289px] w-[456.458px] max-w-none"
+                />
+              </div>
+              <p className="w-[449px] text-[14px] leading-[1.5]">
+                iPiFound × 鲲图智权，将设计美学与知识产权保护深度融合。我们打破&quot;从零构思&quot;的漫长等待，量身匹配灵感线索——让品牌方案可视、可选、可定制，并自带知产护航。选中心动的那一款，即刻联系我们，开启专属于你的品牌焕新之旅。
+              </p>
+            </div>
           </div>
 
-          <p className="mt-[20px] text-[14px] font-medium leading-[21px] text-white/90">
-            iPiFound × 鲲图智权，将设计美学与知识产权保护深度融合。我们打破
-            &quot;从零构思&quot;的漫长等待，量身匹配灵感线索——让品牌方案可视、可选、可定制，并自带知产护航。选中心动的那一款，即刻联系我们，开启专属于你的品牌焕新之旅。
-          </p>
-
-          <p className="mt-[68px] text-[14px] font-medium leading-[24px] text-white/80">
-            ©2026 iPiFound &amp; kuntuzhiquan. All rights reserved
+          <p className="text-[16px] leading-[1.5] whitespace-pre">
+            ©2026  iPiFound &amp; kuntuzhiquan. All rights reserved
           </p>
         </div>
 
-        <div className="flex w-[383px] shrink-0 justify-between pt-[4px]">
+        <nav className="flex w-[383px] shrink-0 gap-16">
           {COLUMNS.map((column) => (
-            <div key={column.title} id={column.id} className="w-[90px] shrink-0">
-              <p className="text-[16px] font-semibold leading-[20px] text-white">
+            <div
+              key={column.title}
+              id={column.id}
+              className={column.title === "Home" ? "w-[75px] shrink-0" : "shrink-0"}
+            >
+              <p className="font-nav text-[20px] leading-none font-semibold">
                 {column.title}
               </p>
-              <ul className="mt-[16px] space-y-[9px] text-[14px] font-medium leading-[1.5] text-white/85">
+              <ul className="mt-4 text-[15px] leading-[1.8] font-medium">
                 {column.links.map((link) => (
                   <li key={`${column.title}-${link.label}`}>
                     <a href={link.href} className="hover:text-lucky-yellow">
@@ -82,7 +138,7 @@ export function SiteFooter() {
               </ul>
             </div>
           ))}
-        </div>
+        </nav>
       </div>
     </footer>
   );
