@@ -1,8 +1,9 @@
+import { asset } from "@/lib/asset";
 import type { ReactNode } from "react";
 
 const CONSULTANTS = [
   {
-    character: "/figma/contact/character-ip.png",
+    character: asset("/figma/contact/character-ip.png"),
     characterWidth: 100,
     characterHeight: 114.356,
     gap: 16,
@@ -15,17 +16,17 @@ const CONSULTANTS = [
     ),
     codes: [
       {
-        src: "/figma/contact/qr-ip-wechat-block.png",
+        src: asset("/figma/contact/qr-ip-wechat-block.png"),
         alt: "微信客服二维码",
       },
       {
-        src: "/figma/contact/qr-ip-xhs-block.png",
+        src: asset("/figma/contact/qr-ip-xhs-block.png"),
         alt: "小红书官方号二维码",
       },
     ],
   },
   {
-    character: "/figma/contact/character-brand.png",
+    character: asset("/figma/contact/character-brand.png"),
     characterWidth: 98,
     characterHeight: 115.95,
     gap: 18,
@@ -38,11 +39,11 @@ const CONSULTANTS = [
     ),
     codes: [
       {
-        src: "/figma/contact/qr-brand-wechat-block.png",
+        src: asset("/figma/contact/qr-brand-wechat-block.png"),
         alt: "微信客服二维码",
       },
       {
-        src: "/figma/contact/qr-brand-xhs-block.png",
+        src: asset("/figma/contact/qr-brand-xhs-block.png"),
         alt: "小红书官方号二维码",
       },
     ],
@@ -53,7 +54,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative h-[412px] w-full text-ink">
       <img
-        src="/figma/contact/wave.svg"
+        src={asset("/figma/contact/wave.svg")}
         alt=""
         width={1446.5}
         height={418.391}
@@ -76,7 +77,7 @@ export function Contact() {
 
           <div className="flex flex-col gap-1">
             <img
-              src="/figma/contact/line.svg"
+              src={asset("/figma/contact/line.svg")}
               alt=""
               width={296}
               height={22.7264}
@@ -86,7 +87,7 @@ export function Contact() {
               在线时段 :{"\n"}周一至周五9:00 - 18:00
             </p>
             <img
-              src="/figma/contact/line.svg"
+              src={asset("/figma/contact/line.svg")}
               alt=""
               width={296}
               height={22.7264}
@@ -146,7 +147,7 @@ function ConsultantRow({
               {title}
             </p>
             <img
-              src="/figma/contact/underline.svg"
+              src={asset("/figma/contact/underline.svg")}
               alt=""
               width={119.913}
               height={32.156}
@@ -155,7 +156,7 @@ function ConsultantRow({
             />
           </div>
           <img
-            src="/figma/contact/arrow.svg"
+            src={asset("/figma/contact/arrow.svg")}
             alt=""
             width={26.123}
             height={112}

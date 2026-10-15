@@ -1,3 +1,5 @@
+import { asset, link } from "@/lib/asset";
+
 export const NAV_LINKS = [
   { href: "/#home", id: "home", label: "Home" },
   { href: "/service", id: "service", label: "service" },
@@ -14,11 +16,11 @@ export function SiteHeader({
   return (
     <header className="relative z-20 flex items-end justify-between px-[220px] pb-[24px] pt-[24px] text-[16px] tracking-[0.5px] text-ink">
       <a
-        href="/#home"
+        href={link("/#home")}
         className="pointer-events-auto relative block h-[64px] w-[220px] shrink-0"
       >
         <img
-          src="/figma/logo-combination.svg"
+          src={asset("/figma/logo-combination.svg")}
           alt="iPiFound × 鲲图智权"
           className="absolute inset-0 size-full max-w-none object-contain object-left"
           width={220}
@@ -31,22 +33,22 @@ export function SiteHeader({
         className="pointer-events-auto relative flex h-[28px] w-[264px] shrink-0 items-center justify-between px-[18px]"
       >
         <img
-          src="/figma/nav-pill.svg"
+          src={asset("/figma/nav-pill.svg")}
           alt=""
           aria-hidden
           className="pointer-events-none absolute inset-[-8%_-1%] size-[116%] max-w-none"
         />
-        {NAV_LINKS.map((link) => (
+        {NAV_LINKS.map((navLink) => (
           <a
-            key={link.href}
-            href={link.href}
+            key={navLink.href}
+            href={link(navLink.href)}
             className={
-              link.id === active
+              navLink.id === active
                 ? "font-nav relative z-10 font-bold"
                 : "font-nav relative z-10 font-normal"
             }
           >
-            {link.label}
+            {navLink.label}
           </a>
         ))}
       </nav>

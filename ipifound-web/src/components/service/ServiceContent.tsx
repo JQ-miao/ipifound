@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/home/SiteHeader";
 import { TrackingEyes } from "@/components/service/TrackingEyes";
+import { asset, link } from "@/lib/asset";
 
 const STAGE_HEIGHT = 5876;
 
@@ -15,7 +16,7 @@ type Art = {
 function ArtLayer({ src, x, y, w, h, alt = "" }: Art) {
   return (
     <img
-      src={src}
+      src={asset(src)}
       alt={alt}
       width={Math.round(w)}
       height={Math.round(h)}
@@ -121,7 +122,7 @@ function SvgMark({
 }) {
   return (
     <img
-      src={src}
+      src={asset(src)}
       alt=""
       width={w}
       height={h}
@@ -242,9 +243,9 @@ export function ServiceContent() {
         w={456}
         h={60}
       />
-      <a href="/inventory" className="absolute block" style={{ left: 564.05, top: 3402.04 }}>
+      <a href={link("/inventory")} className="absolute block" style={{ left: 564.05, top: 3402.04 }}>
         <img
-          src="/figma/service/btn-advantage.png"
+          src={asset("/figma/service/btn-advantage.png")}
           alt="把复杂的工作提前备好"
           width={341}
           height={64}

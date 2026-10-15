@@ -1,5 +1,6 @@
-import { BirthdayResults } from "@/components/inventory/BirthdayResults";
+import { BirthdayResultsClient } from "@/components/inventory/BirthdayResultsClient";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "生日筛选库存 | iPiFound X 鲲图智权",
@@ -10,7 +11,9 @@ export default function InventoryPage() {
   return (
     <>
       <PageHeader />
-      <BirthdayResults />
+      <Suspense fallback={null}>
+        <BirthdayResultsClient />
+      </Suspense>
     </>
   );
 }

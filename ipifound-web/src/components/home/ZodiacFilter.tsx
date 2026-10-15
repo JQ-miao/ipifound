@@ -2,6 +2,7 @@
 
 import { FindInventoryButton } from "@/components/home/FindInventoryButton";
 import { ZODIACS } from "@/lib/zodiacs";
+import { asset, link } from "@/lib/asset";
 import { useState } from "react";
 
 const ART = {
@@ -25,7 +26,7 @@ export function ZodiacFilter() {
   return (
     <div id="zodiac" className="relative h-[466px] w-[1000px]">
       <img
-        src="/figma/card-zodiac.svg"
+        src={asset("/figma/card-zodiac.svg")}
         alt=""
         width={1018.19}
         height={484.197}
@@ -41,7 +42,7 @@ export function ZodiacFilter() {
           请选择你的生肖，或是最贴合你品牌气质的生肖，当然你也可以有你执着的选择啦~
         </p>
 
-        <form action="/inventory/zodiac" className="mt-8">
+        <form action={link("/inventory/zodiac/")} className="mt-8">
           <fieldset>
             <legend className="sr-only">生肖</legend>
             <div className="flex h-[226px] items-end justify-between">
@@ -58,7 +59,7 @@ export function ZodiacFilter() {
                     className="relative flex h-[226px] w-[54px] cursor-pointer flex-col items-center justify-end"
                   >
                     <img
-                      src={`/figma/zodiacs/${zodiac.id}.png`}
+                      src={asset(`/figma/zodiacs/${zodiac.id}.png`)}
                       alt=""
                       width={displayW}
                       height={displayH}
@@ -79,14 +80,14 @@ export function ZodiacFilter() {
                         className="peer sr-only"
                       />
                       <img
-                        src="/figma/radio-off.svg"
+                        src={asset("/figma/radio-off.svg")}
                         alt=""
                         width={20}
                         height={20}
                         className="absolute inset-0 size-5 peer-checked:hidden"
                       />
                       <img
-                        src="/figma/radio-on.svg"
+                        src={asset("/figma/radio-on.svg")}
                         alt=""
                         width={20}
                         height={20}

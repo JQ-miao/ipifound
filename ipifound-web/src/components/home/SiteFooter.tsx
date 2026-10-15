@@ -1,3 +1,5 @@
+import { asset, link } from "@/lib/asset";
+
 const COLUMNS = [
   {
     title: "Home",
@@ -36,7 +38,7 @@ export function SiteFooter() {
   return (
     <footer className="relative h-[439px] overflow-hidden bg-footer text-white">
       <img
-        src="/figma/footer/scribble.svg"
+        src={asset("/figma/footer/scribble.svg")}
         alt=""
         width={544.5}
         height={324}
@@ -44,7 +46,7 @@ export function SiteFooter() {
         style={{ left: 612.25 }}
       />
       <img
-        src="/figma/footer/lamp.svg"
+        src={asset("/figma/footer/lamp.svg")}
         alt=""
         width={102.711}
         height={113.235}
@@ -52,7 +54,7 @@ export function SiteFooter() {
         style={{ left: 1190.61, top: 275.383 }}
       />
       <img
-        src="/figma/footer/mascot-a.svg"
+        src={asset("/figma/footer/mascot-a.svg")}
         alt=""
         width={60}
         height={42.555}
@@ -60,7 +62,7 @@ export function SiteFooter() {
         style={{ left: 582.37, top: 351 }}
       />
       <img
-        src="/figma/footer/mascot-b.svg"
+        src={asset("/figma/footer/mascot-b.svg")}
         alt=""
         width={49.702}
         height={33.738}
@@ -75,9 +77,9 @@ export function SiteFooter() {
       <div className="relative flex items-start gap-[354px] px-[124px] pt-[60px]">
         <div className="flex w-[455px] shrink-0 flex-col gap-[68px]">
           <div className="flex flex-col gap-9">
-            <a href="/#home" className="block h-7 w-[279px]">
+            <a href={link("/#home")} className="block h-7 w-[279px]">
               <img
-                src="/figma/footer/logo.svg"
+                src={asset("/figma/footer/logo.svg")}
                 alt="iPiFound × 鲲图智权"
                 width={279}
                 height={28}
@@ -88,7 +90,7 @@ export function SiteFooter() {
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3">
                 <img
-                  src="/figma/footer/rule.svg"
+                  src={asset("/figma/footer/rule.svg")}
                   alt=""
                   width={456.458}
                   height={2.289}
@@ -99,7 +101,7 @@ export function SiteFooter() {
                   设计美学与鲲图智权知产守护，助力你的品牌轻装上阵，快人一步。
                 </p>
                 <img
-                  src="/figma/footer/rule.svg"
+                  src={asset("/figma/footer/rule.svg")}
                   alt=""
                   width={456.458}
                   height={2.289}
@@ -128,10 +130,10 @@ export function SiteFooter() {
                 {column.title}
               </p>
               <ul className="mt-4 text-[15px] leading-[1.8] font-medium">
-                {column.links.map((link) => (
-                  <li key={`${column.title}-${link.label}`}>
-                    <a href={link.href} className="hover:text-lucky-yellow">
-                      {link.label}
+                {column.links.map((footerLink) => (
+                  <li key={`${column.title}-${footerLink.label}`}>
+                    <a href={link(footerLink.href)} className="hover:text-lucky-yellow">
+                      {footerLink.label}
                     </a>
                   </li>
                 ))}
