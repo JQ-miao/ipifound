@@ -1,25 +1,25 @@
 import { InventoryResults } from "@/components/inventory/InventoryResults";
-import { getZodiac } from "@/lib/zodiacs";
+import { asset } from "@/lib/asset";
+import { getPersonality } from "@/lib/personalities";
 
 export function ZodiacResults({ zodiacId }: { zodiacId?: string }) {
-  const zodiac = getZodiac(zodiacId);
+  const personality = getPersonality(zodiacId);
 
   return (
     <InventoryResults
       backHref="/#zodiac"
       backLabel="返回生肖筛选"
-      visual={
-        <div className="size-[200px] overflow-clip">
+      personality={personality}
+      mascotName={personality.name}
+      illustration={
+        <div className="relative h-[360px] w-[420px] overflow-hidden rounded-[24px] bg-lucky-yellow/20">
           <img
-            src={`/figma/zodiacs/${zodiac.id}.png`}
-            alt={zodiac.name}
-            width={200}
-            height={200}
-            className="h-full w-full object-contain object-left"
+            src={asset(`/figma/zodiacs/${personality.id}.png`)}
+            alt={`${personality.name}型品牌人格`}
+            className="absolute inset-0 m-auto h-[300px] w-auto max-w-none object-contain"
           />
         </div>
       }
-      description={`阐述（例：根据您的生肖${zodiac.name}，您企业适合...）`}
     />
   );
 }
