@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/asset";
 import { useEffect, useRef } from "react";
 
 const VIEW_W = 547.205;
@@ -61,7 +62,7 @@ export function TrackingEyes() {
       frame = requestAnimationFrame(tick);
     };
 
-    fetch("/figma/service/lamps.svg")
+    fetch(asset("/figma/service/lamps.svg"))
       .then((response) => response.text())
       .then((markup) => {
         if (cancelled) return;

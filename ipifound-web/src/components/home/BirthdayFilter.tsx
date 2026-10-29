@@ -1,6 +1,7 @@
 "use client";
 
 import { FindInventoryButton } from "@/components/home/FindInventoryButton";
+import { asset, link } from "@/lib/asset";
 import { useState } from "react";
 
 export function BirthdayFilter() {
@@ -11,7 +12,7 @@ export function BirthdayFilter() {
   return (
     <div id="birthday" className="relative h-[292px] w-[1000px]">
       <img
-        src="/figma/card-birthday.svg"
+        src={asset("/figma/card-birthday.svg")}
         alt=""
         width={1018.19}
         height={310.225}
@@ -27,7 +28,7 @@ export function BirthdayFilter() {
           日期可以是你的生日/公司破壳日/当然也可以是要你管！我就喜欢！的日子等等
         </p>
 
-        <form action="/inventory" className="mt-6 w-[598px]">
+        <form action={link("/inventory/")} className="mt-6 w-[598px]">
           <div className="flex items-center gap-2">
             <DateField
               name="year"
@@ -66,7 +67,7 @@ export function BirthdayFilter() {
       </div>
 
       <img
-        src="/figma/birthday-mascot.png"
+        src={asset("/figma/birthday-mascot.png")}
         alt=""
         width={236.162}
         height={144.809}

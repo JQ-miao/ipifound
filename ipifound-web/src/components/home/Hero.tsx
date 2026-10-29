@@ -2,25 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "./SiteHeader";
+import { asset } from "@/lib/asset";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    console.log("hero mounted", { hasVideo: !!videoRef.current });
+    // Autoplay is often blocked; click/tap overlay starts playback.
   }, []);
 
   function startPlayback() {
     const video = videoRef.current;
-    console.log("hero startPlayback", { hasVideo: !!video, paused: video?.paused });
     if (!video) return;
     if (!video.paused && !video.ended) return;
     if (video.ended) video.currentTime = 0;
-    void video.play().then(
-      () => console.log("hero play ok"),
-      (err) => console.log("hero play fail", String(err)),
-    );
+    void video.play();
   }
 
   return (
@@ -33,8 +30,8 @@ export function Hero() {
       <video
         ref={videoRef}
         className="hero-video pointer-events-none absolute inset-0 size-full object-cover"
-        src="/videos/hero.mp4"
-        poster="/videos/hero-poster.jpg"
+        src={asset("/videos/hero.mp4")}
+        poster={asset("/videos/hero-poster.jpg")}
         playsInline
         preload="auto"
         disablePictureInPicture
