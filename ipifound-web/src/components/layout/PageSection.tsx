@@ -12,8 +12,8 @@ export function PageSection({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className={`bg-white px-[163px] text-ink ${className}`}>
-      <div className={`mx-auto max-w-[1114px] ${innerClassName}`}>{children}</div>
+    <section id={id} className={`bg-white px-[220px] text-ink ${className}`}>
+      <div className={`mx-auto w-full max-w-[1000px] ${innerClassName}`}>{children}</div>
     </section>
   );
 }

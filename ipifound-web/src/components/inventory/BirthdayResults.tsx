@@ -76,7 +76,7 @@ export function BirthdayResults({
       mascotName="生日"
       illustration={
         <div
-          className="relative h-[360px] w-[420px] overflow-hidden rounded-[24px]"
+          className="relative h-[320px] w-[360px] overflow-hidden rounded-[24px]"
           style={{
             backgroundImage: `linear-gradient(135deg, ${lucky.color}33 0%, ${lucky.color}88 100%)`,
           }}

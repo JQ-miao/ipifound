@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-full overflow-x-hidden bg-white">
-      <div className="home-canvas mx-auto w-[1440px] origin-top-left bg-white">
+    <div className="home-shell min-h-full overflow-x-hidden bg-white">
+      <div className="home-canvas w-[1440px] bg-white">
         {children}
         <Contact />
         <SiteFooter />

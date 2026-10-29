@@ -35,7 +35,7 @@ export function InventoryResults({
   mascotName: string;
 }) {
   return (
-    <PageSection className="pb-[80px] pt-[24px]" innerClassName="max-w-[1114px]">
+    <PageSection className="pb-[80px] pt-[24px]">
       {/* back button */}
       <Link
         href={backHref}
@@ -49,8 +49,8 @@ export function InventoryResults({
       </Link>
 
       {/* personality result */}
-      <div className="mt-[36px] flex items-start gap-[56px]">
-        <div className="w-[640px] shrink-0">
+      <div className="mt-[36px] flex items-start gap-[40px]">
+        <div className="min-w-0 flex-1">
           <p className="font-hand text-[24px] leading-none text-ink/70">
             你的品牌人格是：
           </p>
@@ -94,7 +94,7 @@ export function InventoryResults({
           </p>
         </div>
 
-        <div className="relative w-[420px] shrink-0">
+        <div className="relative w-[360px] shrink-0">
           {illustration}
           <p className="font-hand mt-[20px] text-[18px] leading-[1.5] text-ink/80">
             “{personality.quote}”

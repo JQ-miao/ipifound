@@ -36,7 +36,7 @@ export function SiteHeader({
           src={asset("/figma/nav-pill.svg")}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute inset-[-8%_-1%] size-[116%] max-w-none"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[108%] max-w-none -translate-x-1/2 -translate-y-1/2"
         />
         {NAV_LINKS.map((navLink) => (
           <a

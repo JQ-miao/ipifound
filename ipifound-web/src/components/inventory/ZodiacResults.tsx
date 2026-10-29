@@ -12,11 +12,11 @@ export function ZodiacResults({ zodiacId }: { zodiacId?: string }) {
       personality={personality}
       mascotName={personality.name}
       illustration={
-        <div className="relative h-[360px] w-[420px] overflow-hidden rounded-[24px] bg-lucky-yellow/20">
+        <div className="relative h-[320px] w-[360px] overflow-hidden rounded-[24px] bg-lucky-yellow/20">
           <img
             src={asset(`/figma/zodiacs/${personality.id}.png`)}
             alt={`${personality.name}型品牌人格`}
-            className="absolute inset-0 m-auto h-[300px] w-auto max-w-none object-contain"
+            className="absolute inset-0 m-auto h-[260px] w-auto max-w-none object-contain"
           />
         </div>
       }

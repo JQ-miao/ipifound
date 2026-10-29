@@ -35,6 +35,9 @@ jobs:
         run: npm ci
 
       - name: Build static export
+        env:
+          DEPLOY_TARGET: pages
+          NEXT_PUBLIC_BASE_PATH: /ipifound
         run: npm run build
 
       - name: Upload Pages artifact
