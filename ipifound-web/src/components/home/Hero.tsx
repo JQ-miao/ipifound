@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { preload } from "react-dom";
 import { SiteHeader } from "./SiteHeader";
 import { asset } from "@/lib/asset";
+import { PosterVideo } from "@/components/ui/PosterVideo";
 
 export function Hero() {
   preload(asset("/videos/hero-poster.jpg"), { as: "image", fetchPriority: "high" });
@@ -15,7 +16,7 @@ export function Hero() {
     if (!video) return;
     if (!video.paused && !video.ended) return;
     if (video.ended) video.currentTime = 0;
-    void video.play();
+    void video.play().catch(() => setPlaying(false));
   }
 
   return (
@@ -25,9 +26,10 @@ export function Hero() {
     >
       <h1 className="sr-only">Let&apos;s found found!!</h1>
 
-      <video
-        ref={videoRef}
-        className="hero-video pointer-events-none absolute inset-0 size-full object-cover"
+      <PosterVideo
+        videoRef={videoRef}
+        className="pointer-events-none absolute inset-0 size-full"
+        mediaClassName="hero-video"
         src={asset("/videos/hero.mp4")}
         poster={asset("/videos/hero-poster.jpg")}
         playsInline
@@ -36,6 +38,7 @@ export function Hero() {
         disableRemotePlayback
         controls={false}
         onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
         onEnded={() => setPlaying(false)}
         aria-hidden
       />

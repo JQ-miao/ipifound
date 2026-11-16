@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { asset } from "@/lib/asset";
+import { PosterVideo } from "@/components/ui/PosterVideo";
 
 export function AdvantagesVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -28,12 +29,13 @@ export function AdvantagesVideo() {
       aria-pressed={playing}
     >
       {/* Crop only the 36px/70px black sidebars outside the video's own frame. */}
-      <video
-        ref={videoRef}
+      <PosterVideo
+        videoRef={videoRef}
         src={asset("/videos/service-advantages.mp4")}
         poster={asset("/videos/service-advantages-poster.webp")}
         className="pointer-events-none absolute top-0 h-full max-w-none object-fill"
         style={{ left: `${(-36 / 1174) * 100}%`, width: `${(1280 / 1174) * 100}%` }}
+        fit="fill"
         width={1280}
         height={720}
         preload="none"
