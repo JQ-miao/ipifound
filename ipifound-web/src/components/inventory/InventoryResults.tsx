@@ -1,170 +1,65 @@
-import { PageSection } from "@/components/layout/PageSection";
-import { link } from "@/lib/asset";
+import { asset } from "@/lib/asset";
 import type { Personality } from "@/lib/personalities";
 import Link from "next/link";
-import type { ReactNode } from "react";
 
-const INVENTORY_COUNT = 12;
-
-const INVENTORY_LABELS = [
-  "经典拉格",
-  "面包房",
-  "贴纸系列",
-  "人物插画",
-  "励志卡片",
-  "海洋咖啡",
-  "帆布包",
-  "鞋护品牌",
-  "太空咖啡",
-  "晚安咖啡",
-  "几何信封",
-  "极简人像",
-];
-
-export function InventoryResults({
-  backHref,
-  backLabel,
-  personality,
-  illustration,
-  mascotName,
-}: {
-  backHref: string;
-  backLabel: string;
-  personality: Personality;
-  illustration: ReactNode;
-  mascotName: string;
+/** One template for all twelve zodiacs and all nine date numbers. */
+export function InventoryResults({ backHref, backLabel, personality: p }: {
+  backHref: string; backLabel: string; personality: Personality;
 }) {
   return (
-    <PageSection className="pb-[80px] pt-[24px]">
-      {/* back button */}
-      <Link
-        href={backHref}
-        aria-label={backLabel}
-        className="inline-flex h-[44px] items-center gap-2 rounded-full bg-lucky-yellow px-5 text-[16px] font-bold text-ink transition-transform hover:-translate-x-0.5"
-      >
-        <span aria-hidden className="text-[18px] leading-none">
-          ←
-        </span>
-        返回查询
-      </Link>
-
-      {/* personality result */}
-      <div className="mt-[36px] flex items-start gap-[40px]">
-        <div className="min-w-0 flex-1">
-          <p className="font-hand text-[24px] leading-none text-ink/70">
-            你的品牌人格是：
-          </p>
-          <h2 className="font-hand mt-[10px] text-[52px] leading-[1.1] text-ink">
-            {personality.title}
-          </h2>
-
-          <div className="mt-[18px] flex flex-wrap gap-3">
-            {personality.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-lucky-yellow px-4 py-1.5 text-[16px] font-bold text-ink"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <p className="mt-[24px] text-[18px] leading-[1.8] text-ink">
-            {personality.description}
-          </p>
-
-          <div className="mt-[24px] rounded-[20px] bg-lucky-yellow/30 p-6">
-            <p className="text-[16px] leading-[1.8] text-ink">
-              {personality.brandBox}
-            </p>
-          </div>
-
-          <p className="mt-[24px] text-[18px] font-bold text-ink">
-            品牌幸运色：
-            <span
-              className="ml-2 inline-flex items-center gap-2 align-middle"
-            >
-              <span
-                aria-hidden
-                className="inline-block size-4 rounded-full"
-                style={{ backgroundColor: personality.luckyColor }}
-              />
-              {personality.luckyColorName}
-            </span>
-          </p>
-        </div>
-
-        <div className="relative w-[360px] shrink-0">
-          {illustration}
-          <p className="font-hand mt-[20px] text-[18px] leading-[1.5] text-ink/80">
-            “{personality.quote}”
-          </p>
-        </div>
-      </div>
-
-      {/* Pick yours! inventory grid */}
-      <div className="relative mt-[72px]">
-        <div className="flex items-end justify-between">
-          <div>
-            <h3
-              className="font-hand text-[64px] leading-none text-ink"
-              style={{ transform: "rotate(-3deg)", transformOrigin: "left bottom" }}
-            >
-              Pick yours!
-            </h3>
-            <p className="font-hand mt-[14px] text-[22px] leading-[1.4] text-ink">
-              {mascotName}型品牌适配的灵感库存
-            </p>
-            <p className="mt-[8px] max-w-[640px] text-[16px] leading-[1.7] text-ink/70">
-              克制、留白、不喧哗——为这类品牌精选的灵感现货，气质相投，可直接挑选优化。
-            </p>
-          </div>
-          <div className="h-[80px] w-[80px] shrink-0">{illustration}</div>
-        </div>
-
-        <ul className="mt-[36px] grid grid-cols-3 gap-x-[24px] gap-y-[24px]">
-          {Array.from({ length: INVENTORY_COUNT }, (_, index) => (
-            <li
-              key={index}
-              className="group relative h-[260px] overflow-hidden rounded-[18px] border border-ink/10 bg-white"
-            >
-              <div
-                aria-hidden
-                className="absolute inset-0 transition-transform duration-300 group-hover:scale-105"
-                style={{
-                  backgroundImage: `linear-gradient(135deg, ${personality.luckyColor}22 0%, ${personality.luckyColor}55 100%)`,
-                }}
-              />
-              <div className="absolute top-4 left-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-[15px] font-bold text-ink">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <span className="font-hand text-[18px] text-ink">
-                  {INVENTORY_LABELS[index]}
-                </span>
-                <span className="text-[13px] font-bold text-ink/60">
-                  灵感现货
-                </span>
-              </div>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-[28px] text-right">
-          <span className="font-hand text-[16px] text-ink/60">
-            共 {INVENTORY_COUNT} 款灵感现货 · 持续上新中
+    <main className="bg-white text-ink">
+      <div className="px-[120px] pt-[30px]">
+        <Link href={backHref} aria-label={backLabel} className="sketch-button relative inline-flex h-[48px] w-[136px] items-center justify-center">
+          <img decoding="async" src={asset("/figma/ui/btn-back.svg")} alt="" aria-hidden className="button-shape pointer-events-none absolute inset-[-2px] size-[calc(100%+4px)] max-w-none" />
+          <span className="font-hand relative z-10 flex items-center gap-[6px] text-[20px] leading-none">
+            <img decoding="async" src={asset("/figma/ui/btn-back-icon.svg")} alt="" aria-hidden className="button-icon size-[26px] shrink-0 -scale-x-100" />返回重测
           </span>
-        </div>
-      </div>
-
-      <div className="mt-[40px] text-center">
-        <Link
-          href={link("/#contact")}
-          className="inline-flex items-center gap-2 rounded-full bg-lucky-yellow px-7 py-3 text-[18px] font-bold text-ink transition-transform hover:scale-[1.02]"
-        >
-          没找到合适的？联系我们定制 →
         </Link>
       </div>
-    </PageSection>
+      <section aria-label="品牌人格解读" className="mx-auto mt-[24px] flex w-[1000px] items-end gap-[86px]" style={{ minHeight: p.height }}>
+        <div className="w-[482px] shrink-0 self-start">
+          <p className="text-[20px] leading-[20px]">你的品牌人格是：</p>
+          <h1 className="mt-[12px] h-[132px] text-[60px] leading-[1.1] text-radio">
+            <span className="sr-only">{p.title}</span>
+            {/* Preserve the Figma display lettering, with accessible text in the data model. */}
+            <img decoding="async" src={asset(p.titleArtwork)} alt="" aria-hidden width={p.titleWidth} height={132} className="block h-[132px] max-w-none object-contain object-left-top" style={{ width: p.titleWidth }} />
+          </h1>
+          <ul aria-label="人格关键词" className="mt-[24px] flex h-[24px] items-center gap-[12px]">
+            {p.tags.map((tag) => <li key={tag} className="font-hand flex h-[24px] items-center rounded-full border-2 border-[#d3d76c] bg-[#f9ff58] px-[12px] text-[16px] leading-none">{tag}</li>)}
+          </ul>
+          <p className="mt-[16px] text-[16px] leading-[24px]" style={{ minHeight: p.height - 365 }}>{p.description}</p>
+          <div className="relative mt-[20px] h-[117px] w-[482px]">
+            <img decoding="async" src={asset("/figma/brand/tone-box.svg")} alt="" aria-hidden className="absolute top-[25px] left-px h-[92px] w-[481px] max-w-none" />
+            <p className="absolute top-[49px] left-[31px] w-[414px] text-[18px] leading-[1.2]">{p.brandBox}</p>
+            <img decoding="async" src={asset("/figma/brand/tone-badge.svg")} alt="" aria-hidden className="absolute top-0 left-0 h-[42px] w-[78px] max-w-none" />
+            <span className="font-hand absolute top-[8px] left-[3px] -rotate-[16.86deg] text-[16px] leading-none text-lucky-yellow">品牌调性</span>
+          </div>
+        </div>
+        <figure className="flex w-[432px] shrink-0 flex-col gap-[30px]">
+          <img decoding="async" src={asset(p.artwork)} alt={`${p.name}型品牌人格插画`} width={432} height={312} className="h-[312px] w-[432px] object-contain" />
+          <figcaption className="relative w-[432px]" style={{ height: p.quoteHeight }}>
+            <span className="sr-only">{p.quote}——{p.quoteBy}</span>
+            <img decoding="async" src={asset(p.quoteArtwork)} alt="" aria-hidden width={432} height={p.quoteHeight} className="h-full w-full object-contain object-right" />
+          </figcaption>
+        </figure>
+      </section>
+      <section aria-label="适配的灵感库存" className="mx-auto mt-[40px] w-[1200px] pb-[80px]">
+        <div className="relative h-[1040px]">
+          <img decoding="async" src={asset("/figma/ui/pick-yours.svg")} alt="Pick yours!" width={230} height={78} className="pointer-events-none absolute top-0 left-[28px] z-10 h-[78px] w-[230px] max-w-none" />
+          <div className="absolute top-[38px] h-[1002px] w-full bg-[#f3f4eb] px-[104px] pt-[60px]">
+            <img decoding="async" src={asset("/figma/ui/rat-icon.svg")} alt="" aria-hidden className="pointer-events-none absolute top-[60px] left-[24px] h-[52px] w-[64px]" />
+            <h2 className="text-[24px] leading-[24px] font-bold">{p.name}型品牌适配的灵感库存</h2>
+            <p className="mt-[8px] h-[24px] text-[16px] leading-[24px]">{p.inventoryIntro}</p>
+            <ul className="mt-[30px] grid grid-cols-4 gap-[16px]">
+              {Array.from({ length: 12 }, (_, i) => {
+                const n = String(i + 1).padStart(2, "0");
+                return <li key={n} className="h-[248px] w-[236px] overflow-hidden bg-white"><img decoding="async" src={asset(`/figma/inventory/${n}.png`)} alt={`${p.name}型灵感库存 ${n}`} width={236} height={248} loading="lazy" className="size-full object-cover" /></li>;
+              })}
+            </ul>
+            <img decoding="async" src={asset("/figma/ui/rat-chair.svg")} alt="" aria-hidden className="pointer-events-none absolute right-[12px] bottom-[-16px] h-[100px] w-[100px] object-contain" />
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

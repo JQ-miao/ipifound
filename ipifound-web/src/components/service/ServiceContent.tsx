@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/home/SiteHeader";
 import { TrackingEyes } from "@/components/service/TrackingEyes";
-import { asset, link } from "@/lib/asset";
+import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 const STAGE_HEIGHT = 5876;
 
@@ -17,6 +18,8 @@ function ArtLayer({ src, x, y, w, h, alt = "" }: Art) {
   return (
     <img
       src={asset(src)}
+      loading={y < 1000 ? "eager" : "lazy"}
+      decoding="async"
       alt={alt}
       width={Math.round(w)}
       height={Math.round(h)}
@@ -26,26 +29,23 @@ function ArtLayer({ src, x, y, w, h, alt = "" }: Art) {
   );
 }
 
-const FLOW: Art[] = [
-  { src: "/figma/service/flow-1527.png", x: 618.35, y: 616.52, w: 446.29, h: 229.1 },
-  { src: "/figma/service/flow-1600.png", x: 804.79, y: 659.76, w: 283.48, h: 235.79 },
-  { src: "/figma/service/flow-1789.png", x: 578, y: 978, w: 399, h: 271 },
-  { src: "/figma/service/flow-1964.png", x: 233, y: 1052, w: 181, h: 212 },
-  { src: "/figma/service/flow-1886.png", x: 245, y: 1113, w: 583, h: 263 },
-  { src: "/figma/service/flow-1998.png", x: 319, y: 1388, w: 213, h: 170 },
-  { src: "/figma/service/flow-2069.png", x: 825, y: 1248, w: 361, h: 242 },
-  { src: "/figma/service/flow-2255.png", x: 498, y: 1564, w: 177, h: 153 },
-  { src: "/figma/service/flow-2189.png", x: 532, y: 1606, w: 290, h: 208 },
-  { src: "/figma/service/flow-2294.png", x: 769, y: 1643, w: 389, h: 224 },
+
+const CARD_NUMS: { n: number; x: number; y: number; tx: number; ty: number }[] = [
+  { n: 1, x: 376.984375, y: 3543.009765625, tx: 396.69138526916504, ty: 3550.9707083702087 },
+  { n: 2, x: 636.4296875, y: 3543.009765625, tx: 651.0078125, ty: 3549.9453125 },
+  { n: 3, x: 902.173828125, y: 3543.009765625, tx: 916.751953125, ty: 3549.9453125 },
+  { n: 4, x: 376.984375, y: 3791.482421875, tx: 390.53515625, ty: 3798.41796875 },
+  { n: 5, x: 636.4296875, y: 3791.482421875, tx: 652.033203125, ty: 3799.443359375 },
+  { n: 6, x: 902.173828125, y: 3791.482421875, tx: 916.751953125, ty: 3798.41796875 },
 ];
 
 const CARDS: Art[] = [
-  { src: "/figma/service/card-1.png", x: 365.84, y: 3534.63, w: 244.61, h: 233.47 },
-  { src: "/figma/service/card-2.png", x: 625.29, y: 3534.63, w: 244.61, h: 233.47 },
-  { src: "/figma/service/card-3.png", x: 891.03, y: 3534.63, w: 244.61, h: 233.47 },
-  { src: "/figma/service/card-4.png", x: 365.84, y: 3783.1, w: 244.61, h: 233.47 },
-  { src: "/figma/service/card-5.png", x: 625.29, y: 3783.1, w: 244.61, h: 233.47 },
-  { src: "/figma/service/card-6.png", x: 891.03, y: 3783.1, w: 244.61, h: 233.47 },
+  { src: "/figma/service/card-1.svg", x: 365.84, y: 3534.63, w: 244.61, h: 233.47 },
+  { src: "/figma/service/card-2.svg", x: 625.29, y: 3534.63, w: 244.61, h: 233.47 },
+  { src: "/figma/service/card-3.svg", x: 891.03, y: 3534.63, w: 244.61, h: 233.47 },
+  { src: "/figma/service/card-4.svg", x: 365.84, y: 3783.1, w: 244.61, h: 233.47 },
+  { src: "/figma/service/card-5.svg", x: 625.29, y: 3783.1, w: 244.61, h: 233.47 },
+  { src: "/figma/service/card-6.svg", x: 891.03, y: 3783.1, w: 244.61, h: 233.47 },
 ];
 
 const CARD_ART: Art[] = [
@@ -123,6 +123,8 @@ function SvgMark({
   return (
     <img
       src={asset(src)}
+      loading={y < 1000 ? "eager" : "lazy"}
+      decoding="async"
       alt=""
       width={w}
       height={h}
@@ -149,25 +151,14 @@ export function ServiceContent() {
       <ArtLayer src="/figma/service/hanger.png" x={640} y={-1} w={167} h={210.83} />
 
       <div id="process" className="absolute scroll-mt-[120px]" style={{ left: 220, top: 510 }} />
-      {FLOW.map((layer) => (
-        <ArtLayer key={layer.src} {...layer} />
-      ))}
       <ArtLayer
-        src="/figma/service/flow-title.png"
+        src="/figma/service/flow-composite.png"
         alt="全服务流程"
-        x={222.7}
-        y={576.2}
-        w={369}
-        h={134}
+        x={220}
+        y={510}
+        w={1000}
+        h={1357.39}
       />
-      <ArtLayer src="/figma/service/step-1.png" alt="1 主理人提出品牌名" x={623} y={535} w={225} h={46} />
-      <ArtLayer src="/figma/service/step-2.png" alt="2 知识产权合伙人" x={1022} y={592} w={168} h={47} />
-      <ArtLayer src="/figma/service/step-3.png" alt="3 主理人继续想名字" x={354} y={786} w={225} h={66} />
-      <ArtLayer src="/figma/service/step-4.png" alt="4 在灵感现货中匹配方案" x={795} y={977} w={242} h={46} />
-      <ArtLayer src="/figma/service/step-6.png" alt="6 知识产权合伙人" x={220} y={1288} w={251} h={109} />
-      <ArtLayer src="/figma/service/step-7.png" alt="7 设计方案调整优化" x={903} y={1174} w={243} h={104} />
-      <ArtLayer src="/figma/service/step-8.png" alt="8 方案成稿交付" x={494} y={1490} w={217} h={105} />
-      <ArtLayer src="/figma/service/step-9.png" alt="9 品牌中涉及的相关保护上线" x={908} y={1556} w={264} h={47} />
 
       <div
         className="absolute w-[336px] text-[16px] leading-[1.5] font-medium"
@@ -222,10 +213,10 @@ export function ServiceContent() {
       <ArtLayer
         src="/figma/service/title-advantage.png"
         alt="品牌建立服务优势"
-        x={508.21}
-        y={3126.41}
-        w={444}
-        h={54}
+        x={504.21}
+        y={3125.41}
+        w={452}
+        h={56}
       />
       <ArtLayer
         src="/figma/service/logo-advantage.png"
@@ -238,30 +229,138 @@ export function ServiceContent() {
       <ArtLayer
         src="/figma/service/subtitle-advantage.png"
         alt="设计公司 × 知识产权公司联合，让品牌从灵感到保护更高效，更安心。"
-        x={506.87}
-        y={3281.26}
-        w={456}
-        h={60}
+        x={496.87}
+        y={3277.26}
+        w={476}
+        h={68}
       />
-      <a href={link("/inventory")} className="absolute block" style={{ left: 564.05, top: 3402.04 }}>
+      {/* Figma 16:2612 / 16:2613 scribble underlines under subtitle */}
+      <ArtLayer src="/figma/service/ul-adv-1.png" x={690.95} y={3347.04} w={142.62} h={12.31} />
+      <ArtLayer src="/figma/service/ul-adv-2.png" x={854.09} y={3347.04} w={106.71} h={12.31} />
+      <Link
+        href="/#birthday"
+        className="absolute flex items-center justify-center"
+        style={{ left: 566, top: 3403, width: 337.57, height: 61.14 }}
+        aria-label="把复杂的工作提前备好"
+      >
         <img
-          src={asset("/figma/service/btn-advantage.png")}
-          alt="把复杂的工作提前备好"
-          width={341}
-          height={64}
-          className="block max-w-none"
+          loading="lazy"
+          decoding="async"
+          src={asset("/figma/service/ui/btn-search.svg")}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute inset-0 size-full max-w-none"
+          width={338}
+          height={61}
         />
-      </a>
+        <span className="font-hand relative z-10 flex items-center gap-[6px] text-[20px] leading-none text-white">
+          把复杂的工作提前备好
+          <img
+            loading="lazy"
+            decoding="async"
+            src={asset("/figma/service/ui/btn-search-go.svg")}
+            alt=""
+            aria-hidden
+            className="size-[28px] max-w-none"
+            width={28}
+            height={28}
+          />
+        </span>
+      </Link>
 
-      <ArtLayer src="/figma/service/bubble-left.png" alt="好创意，更要被保护" x={307.21} y={2794} w={266} h={111} />
+      <ArtLayer
+        src="/figma/service/bubble-left.png"
+        alt="好创意，更要被保护"
+        x={307.21}
+        y={2794}
+        w={263.3}
+        h={108.16}
+      />
+      {/* Figma 16:2618 + 16:2619 */}
+      <ArtLayer
+        src="/figma/service/bubble-right.png"
+        alt="先筛选再优化更有效呦"
+        x={933}
+        y={2842}
+        w={287}
+        h={112}
+      />
+      <p
+        className="absolute text-center text-[16px] leading-6 font-medium whitespace-nowrap text-ink"
+        style={{ left: 955, top: 2877, width: 240 }}
+      >
+        先筛选再优化更有效呦
+      </p>
       <ArtLayer src="/figma/service/pal-left.png" x={349.28} y={2901.73} w={216.58} h={220.94} />
       <ArtLayer src="/figma/service/pal-right.png" x={891.03} y={2958.17} w={213.24} h={181.64} />
-      <ArtLayer src="/figma/service/bubble-bl.png" alt="好品牌，从这里开始！" x={220} y={3425} w={222.26} h={169.33} />
-      <ArtLayer src="/figma/service/bubble-br.png" alt="从结果出发，更高效！" x={997.74} y={3359.35} w={222.26} h={93.9} />
+      <ArtLayer
+        src="/figma/service/bubble-bl.png"
+        alt="好品牌，从这里开始！"
+        x={220}
+        y={3425}
+        w={222.26}
+        h={169.33}
+      />
+      <ArtLayer
+        src="/figma/service/bubble-br.png"
+        alt="从结果出发，更高效！"
+        x={997.74}
+        y={3359.35}
+        w={222.26}
+        h={93.9}
+      />
+
+      {/* Figma 16:2572 */}
+      <ArtLayer
+        src="/figma/service/whale.svg"
+        x={990.38671875}
+        y={3450.666015625}
+        w={145.1835479736328}
+        h={85.7817611694336}
+      />
+      {/* Figma 201:2640: complete mascot, including the exported stroke bounds. */}
+      <ArtLayer
+        src="/figma/service/mascot-advantages.svg"
+        x={230.24}
+        y={3571.89}
+        w={137.079}
+        h={151.561}
+      />
 
       {CARDS.map((card) => (
         <ArtLayer key={`${card.x}-${card.y}`} {...card} />
       ))}
+      {CARD_NUMS.map((badge) => (
+        <div key={badge.n}>
+          <div
+            className="pointer-events-none absolute"
+            style={{
+              left: badge.x,
+              top: badge.y,
+              width: 50.27593231201172,
+              height: 48.54227828979492,
+              borderRadius: "50%",
+              background: "#0080FE",
+            }}
+            aria-hidden
+          />
+          <p
+            className="pointer-events-none absolute font-bold leading-none text-white"
+            style={{
+              left: badge.tx,
+              top: badge.ty,
+              fontSize: 38.14,
+              fontFamily: 'var(--font-josefin), sans-serif',
+            }}
+          >
+            {badge.n}
+          </p>
+        </div>
+      ))}
+      <ArtLayer src="/figma/service/whale-win-1.svg" x={981.322265625} y={3527.037109375} w={22.91857147216797} h={11.975234985351562} />
+      <ArtLayer src="/figma/service/whale-win-2.svg" x={1079.140625} y={3527.037109375} w={22.91857147216797} h={11.975234985351562} />
+      <ArtLayer src="/figma/service/card-deco-2596.svg" x={362.107421875} y={3607.85546875} w={12.31247329711914} h={21.853469848632812} />
+
       <ArtLayer src="/figma/service/illu-1a.png" x={466.25} y={3569.72} w={48.1} h={52.86} />
       <ArtLayer src="/figma/service/illu-1b.png" x={526.93} y={3601.49} w={47.12} h={44.43} />
       {CARD_ART.map((art) => (
@@ -295,21 +394,23 @@ export function ServiceContent() {
       <ArtLayer
         src="/figma/service/title-about.png"
         alt="联合品牌介绍"
-        x={553.5}
-        y={4118.07}
-        w={334}
-        h={53}
+        x={551}
+        y={4116.57}
+        w={339}
+        h={56}
       />
-      <ArtLayer
+            <ArtLayer src="/figma/service/about-deco-vector.svg" x={592} y={4212} w={240} h={76} />
+      <ArtLayer src="/figma/service/about-deco-ellipse.svg" x={669.5} y={4251.5} w={85} h={61} />
+<ArtLayer
         src="/figma/service/logo-about.png"
         alt="iPiFound × 鲲图智权"
-        x={580.58}
-        y={4309.15}
-        w={278}
-        h={86}
+        x={585}
+        y={4313}
+        w={269.15}
+        h={78.29}
       />
       <SvgMark src="/figma/service/about/logo-left.svg" x={360} y={4477} w={105.335} h={19.171} />
-      <SvgMark src="/figma/service/about/logo-right.svg" x={811.75} y={4477.75} w={94.942} h={23.789} />
+      <SvgMark src="/figma/service/about/logo-right.svg" x={812} y={4478} w={94.201} h={23.245} />
 
       <div
         className="absolute w-[372px] text-[16px] leading-[1.6] font-medium"
@@ -366,33 +467,26 @@ export function ServiceContent() {
         <p>我们负责让它真正属于你。</p>
       </div>
 
-      <SvgMark src="/figma/service/about/ul-1.svg" x={475.53} y={4544.72} w={51.163} h={6.19} />
-      <SvgMark src="/figma/service/about/ul-5.svg" x={942.82} y={4544.12} w={66.982} h={7.063} />
-      <SvgMark src="/figma/service/about/ul-2.svg" x={350.96} y={4932.47} w={138.282} h={9.885} />
-      <SvgMark src="/figma/service/about/ul-6.svg" x={806.31} y={4933.37} w={157.381} h={7.9} />
-      <SvgMark src="/figma/service/about/ul-3.svg" x={352.51} y={4958.73} w={134.743} h={10.421} />
-      <SvgMark src="/figma/service/about/ul-4.svg" x={351.12} y={4988.62} w={161.154} h={7.879} />
-      <SvgMark src="/figma/service/about/ul-7.svg" x={804.4} y={4963.72} w={193.089} h={6.229} />
+      {/* Underline SVGs include padding; place so stroke aligns to Figma content box */}
+      <SvgMark src="/figma/service/about/ul-1.svg" x={475.49} y={4544.67} w={51.163} h={6.19} />
+      <SvgMark src="/figma/service/about/ul-5.svg" x={943.26} y={4544.11} w={66.981} h={7.063} />
+      <SvgMark src="/figma/service/about/ul-2.svg" x={351.07} y={4932.55} w={138.282} h={9.885} />
+      <SvgMark src="/figma/service/about/ul-6.svg" x={806.33} y={4933.41} w={157.381} h={7.9} />
+      <SvgMark src="/figma/service/about/ul-3.svg" x={352.69} y={4958.57} w={134.743} h={10.421} />
+      <SvgMark src="/figma/service/about/ul-4.svg" x={350.92} y={4988.68} w={161.154} h={7.879} />
+      <SvgMark src="/figma/service/about/ul-7.svg" x={804.58} y={4963.76} w={193.089} h={6.229} />
 
-      <ArtLayer src="/figma/service/mascot-about.png" x={857.18} y={5034.12} w={106} h={145} />
+      <ArtLayer src="/figma/service/mascot-about.png" x={859} y={5036} w={102.36} h={141.23} />
 
       <div id="clients" className="absolute scroll-mt-[120px]" style={{ left: 220, top: 5247 }} />
-      <ArtLayer src="/figma/service/mascot-clients.png" x={353} y={5222.5} w={160} h={105} />
-      <ArtLayer
-        src="/figma/service/title-clients.png"
-        alt="服务过的上帝们"
-        x={525.5}
-        y={5248}
-        w={390}
-        h={54}
-      />
+      <ArtLayer src="/figma/service/mascot-clients.png" x={355} y={5225} w={156} h={100} />
       <ArtLayer
         src="/figma/service/clients-wall.png"
-        alt="服务过的企业"
+        alt="服务过的上帝们"
         x={220}
-        y={5363}
+        y={5247}
         w={1001}
-        h={436}
+        h={552}
       />
 
       <div className="absolute inset-x-0 top-0 z-30">

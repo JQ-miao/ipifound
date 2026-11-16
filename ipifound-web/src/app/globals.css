@@ -39,14 +39,42 @@
   --color-lucky-pink: var(--lucky-pink);
   --color-card: var(--card);
   --font-display: var(--font-josefin), var(--font-noto);
-  --font-nav: var(--font-blinker), var(--font-bricolage);
-  --font-hand: var(--font-kuaile), var(--font-noto);
-  --font-footer: var(--font-jakarta);
-  --font-contact: var(--font-inter);
+  --font-nav: var(--font-blinker), var(--font-noto);
+  --font-hand: var(--font-handwriting), var(--font-noto);
+  --font-footer: var(--font-josefin), var(--font-noto);
+  --font-contact: var(--font-noto);
   --font-cjk: var(--font-noto);
   --font-sans: var(--font-noto), var(--font-josefin), ui-sans-serif, system-ui,
     sans-serif;
 }
+
+.sketch-button {
+  color: var(--ink);
+  cursor: pointer;
+}
+.sketch-button:hover { color: var(--radio); }
+.sketch-button:active { color: white; }
+.sketch-button:hover .button-icon { filter: invert(35%) sepia(100%) saturate(4300%) hue-rotate(199deg); }
+.sketch-button:active .button-icon { filter: brightness(0) invert(1); }
+.sketch-button:hover .button-shape { content: var(--button-search-hover); }
+.sketch-button:active .button-shape { content: var(--button-search-pressed); }
+.sketch-button[aria-label]:hover .button-shape { content: var(--button-back-hover); }
+.sketch-button[aria-label]:active .button-shape { content: var(--button-back-pressed); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--radio);
+  outline-offset: 5px;
+}
+.project-page {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--ink);
+  border-radius: 9px 7px 8px 6px;
+  font-family: var(--font-hand);
+}
+.project-page:hover { color: var(--radio); }
 
 html {
   scroll-behavior: smooth;
@@ -63,7 +91,7 @@ body {
 }
 
 .font-heading-light {
-  font-family: var(--font-noto-light), var(--font-cjk), sans-serif;
+  font-family: var(--font-noto), sans-serif;
   font-weight: 300;
 }
 
@@ -102,4 +130,8 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
