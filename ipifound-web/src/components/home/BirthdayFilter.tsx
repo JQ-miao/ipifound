@@ -3,6 +3,7 @@
 import { FindInventoryButton } from "@/components/home/FindInventoryButton";
 import { asset, link } from "@/lib/asset";
 import { useState } from "react";
+import { isValidDate } from "@/lib/personalities";
 
 export function BirthdayFilter() {
   const [year, setYear] = useState("");
@@ -28,7 +29,17 @@ export function BirthdayFilter() {
           日期可以是你的生日/公司破壳日/当然也可以是要你管！我就喜欢！的日子等等
         </p>
 
-        <form action={link("/inventory/")} className="mt-6 w-[598px]">
+        <form action={link("/inventory/")} className="mt-6 w-[598px]" onSubmit={(event) => {
+          if (!isValidDate(year, month, day)) {
+            event.preventDefault();
+            const field = event.currentTarget.elements.namedItem("day") as HTMLInputElement;
+            field.setCustomValidity("请填写有效的日期，例如 2026 年 11 月 16 日");
+            field.reportValidity();
+          }
+        }} onInput={(event) => {
+          const form = event.currentTarget;
+          (form.elements.namedItem("day") as HTMLInputElement).setCustomValidity("");
+        }}>
           <div className="flex items-center gap-2">
             <DateField
               name="year"
@@ -106,10 +117,13 @@ function DateField({
           onChange(event.target.value.replace(/\D/g, "").slice(0, maxLength))
         }
         inputMode="numeric"
+        aria-label={label}
+        autoComplete="off"
+        maxLength={maxLength}
         placeholder={placeholder}
         required={required}
         minLength={minLength}
-        className="font-hand h-full w-[156px] rounded-lg border-2 border-line bg-white pr-4 pl-2 text-right text-[18px] text-ink outline-none placeholder:text-ink/30"
+        className="font-hand h-full w-[156px] rounded-lg border-2 border-line bg-white pr-4 pl-2 text-right text-[18px] text-ink outline-none placeholder:text-ink/30 focus:border-radio"
       />
       <span className="font-hand flex h-full w-[38px] items-center justify-center text-[18px] leading-[0.9]">
         {label}

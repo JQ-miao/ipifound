@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHeader active="projects" />
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="-mt-[112px] h-[2558px]" aria-busy="true" aria-label="正在加载案例" />}>
         <ProjectsPageClient />
       </Suspense>
     </>

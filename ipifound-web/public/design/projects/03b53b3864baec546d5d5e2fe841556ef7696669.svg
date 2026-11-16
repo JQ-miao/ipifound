@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="82" height="14.0001" viewBox="0 0 82 14.0001" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#229;&#162;&#168;&#233;&#149;&#156;">
+<path id="Rectangle 15" d="M35 7.65193C35 7.55389 35.034 7.4603 35.1048 7.39243C35.5379 6.97695 37.3517 5.5 41.25 5.5C45.3266 5.5 46.7198 7.11514 46.9604 7.44253C46.9879 7.47993 47 7.52454 47 7.57094C47 7.82754 46.5683 7.99278 46.3651 7.83607C45.6067 7.25117 44.0707 6.47791 41.25 6.47791C38.5796 6.47791 36.8873 7.34424 35.947 8.05693C35.6252 8.3008 35 8.05567 35 7.65193Z" fill="#CCCCCC" fill-opacity="0.97"/>
+<g id="Ellipse 60">
+<path d="M82 4.20594V11.3236L63.5 14.0001L46 10.5589V5.353L63.5 5.91278e-05L82 4.20594Z" fill="black" fill-opacity="0.6"/>
+<mask id="stroke0_201_47201" fill="white">
+<path d="M82 4.20594V11.3236L63.5 14.0001L46 10.5589V5.353L63.5 5.91278e-05L82 4.20594Z"/>
+</mask>
+<path d="M82 4.20594V11.3236L63.5 14.0001L46 10.5589V5.353L63.5 5.91278e-05L82 4.20594Z" stroke-width="2" stroke="white" stroke-opacity="0.8" mask="url(#stroke0_201_47201)"/>
+</g>
+<g id="Ellipse 60_2">
+<path d="M0 4.20588V11.3235L18.5 14L36 10.5588V5.35294L18.5 0L0 4.20588Z" fill="black" fill-opacity="0.6"/>
+<mask id="stroke1_201_47201" fill="white">
+<path d="M0 4.20588V11.3235L18.5 14L36 10.5588V5.35294L18.5 0L0 4.20588Z"/>
+</mask>
+<path d="M0 4.20588V11.3235L18.5 14L36 10.5588V5.35294L18.5 0L0 4.20588Z" stroke-width="2" stroke="white" stroke-opacity="0.8" mask="url(#stroke1_201_47201)"/>
+</g>
+</g>
+</svg>

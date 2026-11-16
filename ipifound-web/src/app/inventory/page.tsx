@@ -11,7 +11,7 @@ export default function InventoryPage() {
   return (
     <>
       <PageHeader />
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="h-[1771px]" aria-busy="true" aria-label="正在匹配品牌人格" />}>
         <BirthdayResultsClient />
       </Suspense>
     </>

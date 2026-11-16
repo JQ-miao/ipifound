@@ -14,9 +14,10 @@ export function SiteHeader({
   active?: NavId;
 }) {
   return (
-    <header className="relative z-20 flex items-end justify-between px-[220px] pb-[24px] pt-[24px] text-[16px] tracking-[0.5px] text-ink">
+    <header className="relative z-20 flex items-end justify-between px-[120px] pb-[24px] pt-[24px] text-[16px] tracking-[0.5px] text-ink">
       <a
         href={link("/#home")}
+        aria-label="iPiFound 首页"
         className="pointer-events-auto relative block h-[64px] w-[220px] shrink-0"
       >
         <img
@@ -42,6 +43,7 @@ export function SiteHeader({
           <a
             key={navLink.href}
             href={link(navLink.href)}
+            aria-current={navLink.id === active ? "page" : undefined}
             className={
               navLink.id === active
                 ? "font-nav relative z-10 font-bold"

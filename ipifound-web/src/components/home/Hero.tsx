@@ -1,16 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { SiteHeader } from "./SiteHeader";
 import { asset } from "@/lib/asset";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-
-  useEffect(() => {
-    // Autoplay is often blocked; click/tap overlay starts playback.
-  }, []);
 
   function startPlayback() {
     const video = videoRef.current;
@@ -23,7 +19,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative aspect-video w-full overflow-hidden bg-hero"
+      className="relative h-[840px] w-full overflow-hidden bg-hero"
     >
       <h1 className="sr-only">Let&apos;s found found!!</h1>
 

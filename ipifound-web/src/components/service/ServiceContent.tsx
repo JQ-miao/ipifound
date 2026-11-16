@@ -233,7 +233,7 @@ export function ServiceContent() {
       <ArtLayer src="/figma/service/ul-adv-1.png" x={690.95} y={3347.04} w={142.62} h={12.31} />
       <ArtLayer src="/figma/service/ul-adv-2.png" x={854.09} y={3347.04} w={106.71} h={12.31} />
       <a
-        href={link("/inventory")}
+        href={link("/#birthday")}
         className="absolute flex items-center justify-center"
         style={{ left: 566, top: 3403, width: 337.57, height: 61.14 }}
         aria-label="把复杂的工作提前备好"
@@ -341,7 +341,7 @@ export function ServiceContent() {
               left: badge.tx,
               top: badge.ty,
               fontSize: 38.14,
-              fontFamily: '"Josefin Sans", sans-serif',
+              fontFamily: 'var(--font-josefin), sans-serif',
             }}
           >
             {badge.n}

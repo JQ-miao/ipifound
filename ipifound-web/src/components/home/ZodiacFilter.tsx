@@ -58,6 +58,11 @@ export function ZodiacFilter() {
                     key={zodiac.id}
                     className="relative flex h-[226px] w-[54px] cursor-pointer flex-col items-center justify-end"
                   >
+                    {selected === zodiac.id && <span aria-hidden className="pointer-events-none absolute top-0 left-0 h-[166px] w-[54px]">
+                      <img src={asset("/design/ui/select-beam.svg")} alt="" className="absolute top-[11px] left-[-1px] h-[156px] w-[56px] max-w-none mix-blend-darken" />
+                      <img src={asset("/design/ui/select-shadow.svg")} alt="" className="absolute top-[155px] left-[-1px] h-[11px] w-[55px] max-w-none mix-blend-darken" />
+                      <img src={asset("/design/ui/select-lamp.svg")} alt="" className="absolute top-[-1px] left-[13px] h-[25px] w-[29px] max-w-none" />
+                    </span>}
                     <img
                       src={asset(`/figma/zodiacs/${zodiac.id}.png`)}
                       alt=""
@@ -84,7 +89,7 @@ export function ZodiacFilter() {
                         alt=""
                         width={20}
                         height={20}
-                        className="absolute inset-0 size-5 peer-checked:hidden"
+                        className="absolute inset-0 size-5 peer-checked:hidden peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-radio"
                       />
                       <img
                         src={asset("/figma/radio-on.svg")}
