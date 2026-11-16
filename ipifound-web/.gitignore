@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# Site videos must be deployed, even when a developer globally ignores MP4 files.
+!/public/videos/*.mp4
+
 # debug
 npm-debug.log*
 yarn-debug.log*
