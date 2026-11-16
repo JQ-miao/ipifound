@@ -1,6 +1,7 @@
 import { asset } from "@/lib/asset";
 import type { Personality } from "@/lib/personalities";
 import Link from "next/link";
+import { OutlinedLabel } from "@/components/ui/OutlinedLabel";
 
 /** One template for all twelve zodiacs and all nine date numbers. */
 export function InventoryResults({ backHref, backLabel, personality: p }: {
@@ -11,8 +12,9 @@ export function InventoryResults({ backHref, backLabel, personality: p }: {
       <div className="px-[120px] pt-[30px]">
         <Link href={backHref} aria-label={backLabel} className="sketch-button relative inline-flex h-[48px] w-[136px] items-center justify-center">
           <img decoding="async" src={asset("/figma/ui/btn-back.svg")} alt="" aria-hidden className="button-shape pointer-events-none absolute inset-[-2px] size-[calc(100%+4px)] max-w-none" />
-          <span className="font-hand relative z-10 flex items-center gap-[6px] text-[20px] leading-none">
-            <img decoding="async" src={asset("/figma/ui/btn-back-icon.svg")} alt="" aria-hidden className="button-icon size-[26px] shrink-0 -scale-x-100" />返回重测
+          <span className="relative z-10 flex items-center gap-[6px] leading-none">
+            <img decoding="async" src={asset("/figma/ui/btn-back-icon.svg")} alt="" aria-hidden className="button-icon size-[26px] shrink-0 -scale-x-100" />
+            <OutlinedLabel name="back-label" />
           </span>
         </Link>
       </div>

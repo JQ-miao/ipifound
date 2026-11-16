@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ProjectArtwork, type ArtworkLayer } from "@/components/projects/ProjectArtwork";
 import artwork from "@/lib/design/projects.json";
+import { OutlinedLabel } from "@/components/ui/OutlinedLabel";
 
 export const PROJECT_CATEGORIES = [
   { id: "trademark", label: "商标设计·注册" },
@@ -27,7 +28,7 @@ export function ProjectsContent({ category }: { category: ProjectCategoryId }) {
       <h1 className="sr-only">IP ZOOM — {PROJECT_CATEGORIES.find((item) => item.id === category)?.label}案例</h1>
       <ProjectArtwork layers={artwork.categories[key] as ArtworkLayer[]} />
       <nav aria-label="案例分类" className="absolute top-[749px] left-[146px] z-10 flex w-[190px] flex-col gap-[20px]">
-        {PROJECT_CATEGORIES.map((item) => <Link key={item.id} href={`/projects/?cat=${item.id}`} scroll={false} aria-current={category === item.id ? "page" : undefined} className={`font-hand flex h-[73px] items-center justify-center rounded-[8px] border-4 border-ink px-[10px] text-[24px] leading-none whitespace-nowrap transition-colors hover:bg-radio hover:text-white ${category === item.id ? "bg-radio text-white" : "bg-[#fef1df] text-ink"}`}>{item.label}</Link>)}
+        {PROJECT_CATEGORIES.map((item) => <Link key={item.id} href={`/projects/?cat=${item.id}`} scroll={false} aria-current={category === item.id ? "page" : undefined} className={`flex h-[73px] items-center justify-center rounded-[8px] border-4 border-ink px-[10px] leading-none whitespace-nowrap transition-colors hover:bg-radio hover:text-white ${category === item.id ? "bg-radio text-white" : "bg-[#fef1df] text-ink"}`}><OutlinedLabel name={`category-${item.id}`} /></Link>)}
       </nav>
       {category === "trademark" && <nav aria-label="商标案例分页" className="absolute top-[2281px] left-[866px] z-10 flex h-[40px] items-center gap-[8px] text-[16px]">
         <span className="mr-[48px] whitespace-nowrap">共2页，15个案例</span>

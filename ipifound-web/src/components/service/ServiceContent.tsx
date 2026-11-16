@@ -1,7 +1,9 @@
 import { SiteHeader } from "@/components/home/SiteHeader";
 import { TrackingEyes } from "@/components/service/TrackingEyes";
+import { AdvantagesVideo } from "@/components/service/AdvantagesVideo";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
+import { OutlinedLabel } from "@/components/ui/OutlinedLabel";
 
 const STAGE_HEIGHT = 5876;
 
@@ -193,14 +195,7 @@ export function ServiceContent() {
         <p>少操点心，多像个老板。</p>
       </div>
 
-      <ArtLayer
-        src="/figma/service/advantage-panel.png"
-        alt="我们的优势"
-        x={220.96}
-        y={1873.5}
-        w={678.76}
-        h={415.02}
-      />
+      <AdvantagesVideo />
       <ArtLayer
         src="/figma/service/wave-character.png"
         x={577}
@@ -211,7 +206,7 @@ export function ServiceContent() {
 
       <div id="advantages" className="absolute scroll-mt-[120px]" style={{ left: 504, top: 3125 }} />
       <ArtLayer
-        src="/figma/service/title-advantage.png"
+        src="/design/text/title-advantage.svg"
         alt="品牌建立服务优势"
         x={504.21}
         y={3125.41}
@@ -227,7 +222,7 @@ export function ServiceContent() {
         h={64.83}
       />
       <ArtLayer
-        src="/figma/service/subtitle-advantage.png"
+        src="/design/text/subtitle-advantage.svg"
         alt="设计公司 × 知识产权公司联合，让品牌从灵感到保护更高效，更安心。"
         x={496.87}
         y={3277.26}
@@ -253,17 +248,17 @@ export function ServiceContent() {
           width={338}
           height={61}
         />
-        <span className="font-hand relative z-10 flex items-center gap-[6px] text-[20px] leading-none text-white">
-          把复杂的工作提前备好
+        <span className="absolute inset-y-[12.5%] left-[6.98%] z-10 flex items-center gap-[5.095px] leading-none text-white">
+          <OutlinedLabel name="service-cta" />
           <img
             loading="lazy"
             decoding="async"
             src={asset("/figma/service/ui/btn-search-go.svg")}
             alt=""
             aria-hidden
-            className="size-[28px] max-w-none"
-            width={28}
-            height={28}
+            className="size-[30.57px] max-w-none"
+            width={31}
+            height={31}
           />
         </span>
       </Link>

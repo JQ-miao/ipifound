@@ -1,0 +1,47 @@
+{
+  "search-label": {
+    "text": "查找灵感库存",
+    "width": 117.0,
+    "height": 20.0
+  },
+  "back-label": {
+    "text": "返回重测",
+    "width": 78.0,
+    "height": 19.0
+  },
+  "service-cta": {
+    "text": "把复杂的工作提前备好",
+    "width": 254.0,
+    "height": 25.0
+  },
+  "category-trademark": {
+    "text": "商标设计·注册",
+    "width": 165.0,
+    "height": 24.0
+  },
+  "category-ip": {
+    "text": "IP设计·版权",
+    "width": 141.0,
+    "height": 23.0
+  },
+  "category-ui": {
+    "text": "软件设计开发",
+    "width": 142.0,
+    "height": 23.0
+  },
+  "category-creative": {
+    "text": "文创·版权",
+    "width": 117.0,
+    "height": 23.0
+  },
+  "category-space": {
+    "text": "空间",
+    "width": 44.0,
+    "height": 23.0
+  },
+  "category-illustration": {
+    "text": "插画绘制·版权",
+    "width": 168.0,
+    "height": 23.0
+  }
+}

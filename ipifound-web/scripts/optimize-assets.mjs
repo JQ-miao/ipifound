@@ -17,6 +17,7 @@ const sources = (await Promise.all((await files(path.join(root, "src")))
 const candidates = (await files(path.join(root, "public"))).filter((file) => {
   const url = "/" + path.relative(path.join(root, "public"), file);
   return !url.startsWith("/optimized/") && /\.(svg|png)$/.test(file)
+    && !url.startsWith("/design/text/") // Keep outlined lettering sharp and usable as alpha masks.
     && (sources.includes(url) || url.startsWith("/figma/inventory/"))
     && !url.endsWith("/lamps.svg"); // Its pupils must remain live SVG elements.
 });

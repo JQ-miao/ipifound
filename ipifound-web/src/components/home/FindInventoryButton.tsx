@@ -1,4 +1,5 @@
 import { asset } from "@/lib/asset";
+import { OutlinedLabel } from "@/components/ui/OutlinedLabel";
 
 export function FindInventoryButton({ className }: { className?: string }) {
   return (
@@ -14,8 +15,8 @@ export function FindInventoryButton({ className }: { className?: string }) {
         aria-hidden
         className="button-shape pointer-events-none absolute inset-[-2px] size-[calc(100%+4px)] max-w-none"
       />
-      <span className="font-hand relative z-10 flex items-center pr-[4px] text-[20px] leading-none">
-        查找灵感库存
+      <span className="relative z-10 flex items-center pr-[4px] leading-none">
+        <OutlinedLabel name="search-label" />
         <img
           loading="lazy"
           decoding="async"
