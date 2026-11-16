@@ -4,6 +4,7 @@ import { getPersonality } from "@/lib/personalities";
 
 export function ZodiacResults({ zodiacId }: { zodiacId?: string }) {
   const personality = getPersonality(zodiacId);
+  const isRat = personality.id === "rat";
 
   return (
     <InventoryResults
@@ -11,14 +12,23 @@ export function ZodiacResults({ zodiacId }: { zodiacId?: string }) {
       backLabel="返回生肖筛选"
       personality={personality}
       mascotName={personality.name}
+      variant="zodiac"
       illustration={
-        <div className="relative h-[320px] w-[360px] overflow-hidden rounded-[24px] bg-lucky-yellow/20">
+        isRat ? (
+          <img
+            src={asset("/figma/brand/rat-desk.svg")}
+            alt={`${personality.name}型品牌人格`}
+            className="block h-auto w-full max-w-[432px]"
+            width={432}
+            height={312}
+          />
+        ) : (
           <img
             src={asset(`/figma/zodiacs/${personality.id}.png`)}
             alt={`${personality.name}型品牌人格`}
-            className="absolute inset-0 m-auto h-[260px] w-auto max-w-none object-contain"
+            className="mx-auto block h-auto max-h-[312px] w-auto max-w-[432px] object-contain"
           />
-        </div>
+        )
       }
     />
   );

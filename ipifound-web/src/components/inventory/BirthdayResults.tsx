@@ -74,6 +74,7 @@ export function BirthdayResults({
       backLabel="返回生日筛选"
       personality={personality}
       mascotName="生日"
+      variant="birthday"
       illustration={
         <div
           className="relative h-[320px] w-[360px] overflow-hidden rounded-[24px]"
