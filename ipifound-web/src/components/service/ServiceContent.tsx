@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/home/SiteHeader";
 import { TrackingEyes } from "@/components/service/TrackingEyes";
-import { asset, link } from "@/lib/asset";
+import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 const STAGE_HEIGHT = 5876;
 
@@ -17,6 +18,8 @@ function ArtLayer({ src, x, y, w, h, alt = "" }: Art) {
   return (
     <img
       src={asset(src)}
+      loading={y < 1000 ? "eager" : "lazy"}
+      decoding="async"
       alt={alt}
       width={Math.round(w)}
       height={Math.round(h)}
@@ -120,6 +123,8 @@ function SvgMark({
   return (
     <img
       src={asset(src)}
+      loading={y < 1000 ? "eager" : "lazy"}
+      decoding="async"
       alt=""
       width={w}
       height={h}
@@ -232,13 +237,15 @@ export function ServiceContent() {
       {/* Figma 16:2612 / 16:2613 scribble underlines under subtitle */}
       <ArtLayer src="/figma/service/ul-adv-1.png" x={690.95} y={3347.04} w={142.62} h={12.31} />
       <ArtLayer src="/figma/service/ul-adv-2.png" x={854.09} y={3347.04} w={106.71} h={12.31} />
-      <a
-        href={link("/#birthday")}
+      <Link
+        href="/#birthday"
         className="absolute flex items-center justify-center"
         style={{ left: 566, top: 3403, width: 337.57, height: 61.14 }}
         aria-label="把复杂的工作提前备好"
       >
         <img
+          loading="lazy"
+          decoding="async"
           src={asset("/figma/service/ui/btn-search.svg")}
           alt=""
           aria-hidden
@@ -249,6 +256,8 @@ export function ServiceContent() {
         <span className="font-hand relative z-10 flex items-center gap-[6px] text-[20px] leading-none text-white">
           把复杂的工作提前备好
           <img
+            loading="lazy"
+            decoding="async"
             src={asset("/figma/service/ui/btn-search-go.svg")}
             alt=""
             aria-hidden
@@ -257,7 +266,7 @@ export function ServiceContent() {
             height={28}
           />
         </span>
-      </a>
+      </Link>
 
       <ArtLayer
         src="/figma/service/bubble-left.png"
@@ -309,13 +318,13 @@ export function ServiceContent() {
         w={145.1835479736328}
         h={85.7817611694336}
       />
-      {/* Figma 16:2561 */}
+      {/* Figma 201:2640: complete mascot, including the exported stroke bounds. */}
       <ArtLayer
-        src="/figma/service/swoosh-left.svg"
-        x={232.3125}
-        y={3586.87890625}
-        w={133.07728576660156}
-        h={128.52699279785156}
+        src="/figma/service/mascot-advantages.svg"
+        x={230.24}
+        y={3571.89}
+        w={137.079}
+        h={151.561}
       />
 
       {CARDS.map((card) => (

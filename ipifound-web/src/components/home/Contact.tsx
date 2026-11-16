@@ -54,6 +54,8 @@ export function Contact() {
   return (
     <section id="contact" className="relative h-[412px] w-full text-ink">
       <img
+        loading="lazy"
+        decoding="async"
         src={asset("/figma/contact/wave.svg")}
         alt=""
         width={1446.5}
@@ -77,6 +79,8 @@ export function Contact() {
 
           <div className="flex flex-col gap-1">
             <img
+              loading="lazy"
+              decoding="async"
               src={asset("/figma/contact/line.svg")}
               alt=""
               width={296}
@@ -87,6 +91,8 @@ export function Contact() {
               在线时段 :{"\n"}周一至周五9:00 - 18:00
             </p>
             <img
+              loading="lazy"
+              decoding="async"
               src={asset("/figma/contact/line.svg")}
               alt=""
               width={296}
@@ -132,6 +138,8 @@ function ConsultantRow({
   return (
     <div className="flex items-start" style={{ gap }}>
       <img
+        loading="lazy"
+        decoding="async"
         src={character}
         alt=""
         width={characterWidth}
@@ -147,6 +155,8 @@ function ConsultantRow({
               {title}
             </p>
             <img
+              loading="lazy"
+              decoding="async"
               src={asset("/figma/contact/underline.svg")}
               alt=""
               width={119.913}
@@ -156,6 +166,8 @@ function ConsultantRow({
             />
           </div>
           <img
+            loading="lazy"
+            decoding="async"
             src={asset("/figma/contact/arrow.svg")}
             alt=""
             width={26.123}
@@ -167,6 +179,8 @@ function ConsultantRow({
         <div className="flex items-start gap-4">
           {codes.map((code) => (
             <img
+              loading="lazy"
+              decoding="async"
               key={code.src}
               src={code.src}
               alt={code.alt}

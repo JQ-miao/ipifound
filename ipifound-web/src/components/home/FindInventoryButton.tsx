@@ -7,6 +7,8 @@ export function FindInventoryButton({ className }: { className?: string }) {
       className={`sketch-button relative flex h-[48px] w-[172px] items-center justify-center ${className ?? ""}`}
     >
       <img
+        loading="lazy"
+        decoding="async"
         src={asset("/figma/btn-search-shape.svg")}
         alt=""
         aria-hidden
@@ -15,6 +17,8 @@ export function FindInventoryButton({ className }: { className?: string }) {
       <span className="font-hand relative z-10 flex items-center pr-[4px] text-[20px] leading-none">
         查找灵感库存
         <img
+          loading="lazy"
+          decoding="async"
           src={asset("/figma/btn-search-go.svg")}
           alt=""
           aria-hidden

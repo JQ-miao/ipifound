@@ -14,7 +14,7 @@ export type ArtworkLayer = { x: number; y: number; w: number; h: number; content
 function Artwork({ node }: { node: ArtworkNode }): ReactNode {
   if (typeof node === "string") return node;
   const children = node.children?.map((child, i) => <Artwork key={i} node={child} />);
-  if (node.tag === "img") return <img src={asset(node.src!)} alt="" className={node.className} style={node.style} />;
+  if (node.tag === "img") return <img loading="lazy" decoding="async" src={asset(node.src!)} alt="" className={node.className} style={node.style} />;
   if (node.tag === "p") return <p className={node.className} style={node.style}>{children}</p>;
   if (node.tag === "span") return <span className={node.className} style={node.style}>{children}</span>;
   return <div className={node.className} style={node.style}>{children}</div>;

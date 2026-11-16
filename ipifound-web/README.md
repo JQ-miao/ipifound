@@ -57,3 +57,11 @@ npm test        # 日期算法、边界日期、21 组内容及素材完整性
 首页继续使用 `public/videos/hero.mp4`（点击播放）；service 页继续使用 `TrackingEyes` 进行鼠标视线跟随。公共导航、首页筛选、结果页、服务页和案例分类列表参与本次对齐，案例详情页暂不实现。
 
 设计以 1440px 画布为基准，窄屏沿用整体等比缩放。空间和插画分类当前原稿为留空的圆形案例位，按原稿展示；暂未添加虚构案例。
+
+## 设计与性能复核
+
+[2026-11-16 逐页复核记录](docs/design-performance-audit-2026-11-16.md) 包含检查范围、图片体积比较和验证结果。
+
+`asset()` 会优先使用 `public/optimized/` 下的无损 WebP 副本，原始 Figma 导出保持完整。更新原图后运行 `npm run optimize:assets`。复杂 SVG 副本采用两倍设计尺寸，PNG 副本保留原分辨率。页面字体使用本地 WOFF2；重新生成字体副本可执行 `python scripts/optimize-fonts.py`（需 `fonttools`、`brotli`）。
+
+软件开发分类使用 `public/design/projects/software/` 下 11 张独立圆形缩略图，`projects.json` 保留对应 Figma 节点和位置。图片已裁切并带透明角落，浏览器无需加载整张项目图再执行遮罩。重新制作可运行 `node scripts/prepare-software-thumbnails.mjs <单个圆形节点导出目录>`。

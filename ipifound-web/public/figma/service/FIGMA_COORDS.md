@@ -44,7 +44,7 @@ STAGE_HEIGHT in code should remain 5876 (PageShell adds Contact+Footer).
 - right text: 809,4522
 
 
-- swoosh-left Vector 16:2561: 232.31,3586.88,133.08×128.53 — swoosh-left.svg
+- advantages mascot Group 201:2640: 232.3125,3573.791,134.411×147.547; exported stroke bounds 230.24,3571.89,137.079×151.561 — mascot-advantages.svg (complete character replaces the partial swoosh-left.svg)
 - whale Group 16:2572: 990.39,3450.67,145.18×85.78 — whale.svg
 
 - card nums 16:2690/2696/2702/2693/2699/2705: blue #0080FE ellipses + Josefin white 1–6

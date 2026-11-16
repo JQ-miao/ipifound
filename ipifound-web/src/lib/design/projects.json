@@ -3207,684 +3207,135 @@
     ],
     "ui": [
       {
-        "x": 0,
-        "y": 0,
-        "w": 1440,
-        "h": 3409,
+        "x": 341.0,
+        "y": 867.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12323",
         "content": {
-          "tag": "div",
-          "className": "contents relative size-full",
-          "children": [
-            {
-              "tag": "div",
-              "className": "absolute contents left-[341px] top-[867px]",
-              "children": [
-                {
-                  "tag": "div",
-                  "className": "absolute left-[341px] size-[268px] top-[867px]",
-                  "children": [
-                    {
-                      "tag": "img",
-                      "className": "absolute block inset-0 max-w-none size-full",
-                      "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute left-[363px] size-[224px] top-[889px]",
-                  "children": [
-                    {
-                      "tag": "img",
-                      "className": "absolute block inset-0 max-w-none size-full",
-                      "src": "/design/projects/1a927611ecf36477952ffd75ce36b655880e41e4.svg"
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[341px] top-[867px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[341px] size-[268px] top-[867px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[363px] top-[889px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[363px] top-[889px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[262px] left-[345px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[18px_11px] mask-size-[224px_224px] top-[878px] w-[307px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/b86e10e2813fb908dc2e3e070d18ee97a54ae21b.webp"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[263px] left-[321px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[42px_20px] mask-size-[224px_224px] top-[869px] w-[327px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/65bdc7dc9f4433dcf9d88238fb9cab9efb894010.webp"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[341px] left-[203px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[160px_47px] mask-size-[224px_224px] top-[842px] w-[521px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/e2bad41895c6bb28bd2ed85063a622c34e5afafa.webp"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[413px] left-[82px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[281px_153px] mask-size-[224px_224px] top-[736px] w-[759px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/64f2e713b1ac5a90b986ab71e9f028fe4d2227b3.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[648px] top-[867px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[648px] size-[268px] top-[867px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[670px] top-[889px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[670px] top-[889px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute left-[659px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[11px_0px] mask-size-[224px_224px] size-[246px] top-[889px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/027bea21847f948b4de6e4c13500bcfe9d9ad3cc.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[955px] top-[867px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[955px] size-[268px] top-[867px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[977px] top-[889px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[977px] top-[889px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[329px] left-[856px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[121px_14px] mask-size-[224px_224px] top-[875px] w-[443px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/ac517613440b490e8a5d58ca756046b3761fda76.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[341px] top-[1205px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[341px] size-[268px] top-[1205px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[363px] top-[1227px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[363px] top-[1227px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute left-[363px] size-[224px] top-[1227px]",
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute block inset-0 max-w-none size-full",
-                                  "src": "/design/projects/1d0d4bd927664df76d77ea6ac0ae7bea2e676cec.svg"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[198px] left-[338px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[25px_-3px] mask-size-[224px_224px] top-[1230px] w-[354px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/2ba1b95f246e8fd53a462224373aa4731cbff20c.webp"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[279px] left-[357px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[6px_22px] mask-size-[224px_224px] top-[1205px] w-[491px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/065623add8e3fbcd8fc3a56ae6f19672092248e4.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[341px] top-[1895px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[341px] size-[268px] top-[1895px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[363px] top-[1917px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[363px] top-[1917px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute left-[363px] size-[224px] top-[1917px]",
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute block inset-0 max-w-none size-full",
-                                  "src": "/design/projects/1d0d4bd927664df76d77ea6ac0ae7bea2e676cec.svg"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[319px] left-[363px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_11px] mask-size-[224px_224px] top-[1906px] w-[568px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/c9f2ae7b154486ed9007fa4fc4fa0b284003b2ff.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[648px] top-[1895px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[648px] size-[268px] top-[1895px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[670px] top-[1917px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[670px] top-[1917px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute left-[670px] size-[224px] top-[1917px]",
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute block inset-0 max-w-none size-full",
-                                  "src": "/design/projects/1d0d4bd927664df76d77ea6ac0ae7bea2e676cec.svg"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[319px] left-[670px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_11px] mask-size-[224px_224px] top-[1906px] w-[568px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/3f42f32b1282df93fb440fad82bb5a3973c6f231.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[648px] top-[1205px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[648px] size-[268px] top-[1205px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[670px] top-[1227px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[670px] top-[1227px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute left-[659px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[11px_0px] mask-size-[224px_224px] size-[246px] top-[1227px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/027bea21847f948b4de6e4c13500bcfe9d9ad3cc.webp"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[254px] left-[658px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[12px_18px] mask-size-[224px_224px] top-[1209px] w-[451px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/2df886b9a6c149f4c650d3bd1adbf44924b334a9.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[955px] top-[1205px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[955px] size-[268px] top-[1205px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute contents left-[977px] top-[1227px]",
-                      "children": [
-                        {
-                          "tag": "div",
-                          "className": "absolute contents left-[977px] top-[1227px]",
-                          "children": [
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[329px] left-[856px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[121px_14px] mask-size-[224px_224px] top-[1213px] w-[443px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/ac517613440b490e8a5d58ca756046b3761fda76.webp"
-                                }
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "className": "absolute h-[258px] left-[964px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[13px_20px] mask-size-[224px_224px] top-[1207px] w-[458px]",
-                              "style": {
-                                "maskImage": ""
-                              },
-                              "children": [
-                                {
-                                  "tag": "img",
-                                  "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                                  "src": "/design/projects/87ddacc19957b19cc48f2dda4cd959ed53b8b503.webp"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_piaoliuping.webp"
         }
       },
       {
-        "x": 0,
-        "y": 0,
-        "w": 1440,
-        "h": 3409,
+        "x": 648.0,
+        "y": 867.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12332",
         "content": {
-          "tag": "div",
-          "className": "contents relative size-full",
-          "children": [
-            {
-              "tag": "div",
-              "className": "absolute left-[341px] size-[268px] top-[1557px]",
-              "children": [
-                {
-                  "tag": "img",
-                  "className": "absolute block inset-0 max-w-none size-full",
-                  "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                }
-              ]
-            },
-            {
-              "tag": "div",
-              "className": "absolute contents left-[363px] top-[1579px]",
-              "children": [
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[363px] top-[1579px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[363px] size-[224px] top-[1579px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/1d0d4bd927664df76d77ea6ac0ae7bea2e676cec.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute h-[319px] left-[363px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_11px] mask-size-[224px_224px] top-[1568px] w-[568px]",
-                      "style": {
-                        "maskImage": ""
-                      },
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                          "src": "/design/projects/85f9ba222639f9c3b5ba4e9e0906704969f261ea.webp"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_eryueer.webp"
         }
       },
       {
-        "x": 0,
-        "y": 0,
-        "w": 1440,
-        "h": 3409,
+        "x": 955.0,
+        "y": 867.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12338",
         "content": {
-          "tag": "div",
-          "className": "contents relative size-full",
-          "children": [
-            {
-              "tag": "div",
-              "className": "absolute left-[648px] size-[268px] top-[1557px]",
-              "children": [
-                {
-                  "tag": "img",
-                  "className": "absolute block inset-0 max-w-none size-full",
-                  "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                }
-              ]
-            },
-            {
-              "tag": "div",
-              "className": "absolute contents left-[670px] top-[1579px]",
-              "children": [
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[670px] top-[1579px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[670px] size-[224px] top-[1579px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/1d0d4bd927664df76d77ea6ac0ae7bea2e676cec.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute h-[319px] left-[670px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_11px] mask-size-[224px_224px] top-[1568px] w-[568px]",
-                      "style": {
-                        "maskImage": ""
-                      },
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                          "src": "/design/projects/67b367efb745b487b954ceb94424997264400bf5.webp"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_zhongzhi.webp"
         }
       },
       {
-        "x": 0,
-        "y": 0,
-        "w": 1440,
-        "h": 3409,
+        "x": 341.0,
+        "y": 1205.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12344",
         "content": {
-          "tag": "div",
-          "className": "contents relative size-full",
-          "children": [
-            {
-              "tag": "div",
-              "className": "absolute left-[956px] size-[268px] top-[1557px]",
-              "children": [
-                {
-                  "tag": "img",
-                  "className": "absolute block inset-0 max-w-none size-full",
-                  "src": "/design/projects/87db64b6f25002f0578eeb4f4ff4066c738a9a92.svg"
-                }
-              ]
-            },
-            {
-              "tag": "div",
-              "className": "absolute contents left-[978px] top-[1579px]",
-              "children": [
-                {
-                  "tag": "div",
-                  "className": "absolute contents left-[978px] top-[1579px]",
-                  "children": [
-                    {
-                      "tag": "div",
-                      "className": "absolute left-[978px] size-[224px] top-[1579px]",
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute block inset-0 max-w-none size-full",
-                          "src": "/design/projects/1d0d4bd927664df76d77ea6ac0ae7bea2e676cec.svg"
-                        }
-                      ]
-                    },
-                    {
-                      "tag": "div",
-                      "className": "absolute h-[319px] left-[978px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_11px] mask-size-[224px_224px] top-[1568px] w-[568px]",
-                      "style": {
-                        "maskImage": ""
-                      },
-                      "children": [
-                        {
-                          "tag": "img",
-                          "className": "absolute inset-0 max-w-none object-cover pointer-events-none size-full",
-                          "src": "/design/projects/d70f39e32e5a40478c6ed25c4710d544cfd62f7b.webp"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/web_avris.webp"
+        }
+      },
+      {
+        "x": 648.0,
+        "y": 1205.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12366",
+        "content": {
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/web_shenmacloud.webp"
+        }
+      },
+      {
+        "x": 955.0,
+        "y": 1205.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12373",
+        "content": {
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/web_omoda.webp"
+        }
+      },
+      {
+        "x": 341.0,
+        "y": 1557.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12386",
+        "content": {
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_qixiang.webp"
+        }
+      },
+      {
+        "x": 648.0,
+        "y": 1557.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12393",
+        "content": {
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_fengtian.webp"
+        }
+      },
+      {
+        "x": 956.0,
+        "y": 1557.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12400",
+        "content": {
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_feifei.webp"
+        }
+      },
+      {
+        "x": 341.0,
+        "y": 1895.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12352",
+        "content": {
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_zhufangwang.webp"
+        }
+      },
+      {
+        "x": 648.0,
+        "y": 1895.0,
+        "w": 268,
+        "h": 268,
+        "figmaNode": "201:12359",
+        "content": {
+          "tag": "img",
+          "className": "block size-full max-w-none",
+          "src": "/design/projects/software/app_lantuyun.webp"
         }
       }
     ],

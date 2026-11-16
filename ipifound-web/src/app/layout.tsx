@@ -5,23 +5,23 @@ import "./globals.css";
 
 const noto = localFont({
   src: [
-    { path: "../../public/fonts/noto-300.ttf", weight: "300" },
-    { path: "../../public/fonts/noto-400.ttf", weight: "400" },
-    { path: "../../public/fonts/noto-500.ttf", weight: "500" },
-    { path: "../../public/fonts/noto-700.ttf", weight: "700" },
+    { path: "../../public/fonts/noto-300.woff2", weight: "300" },
+    { path: "../../public/fonts/noto-400.woff2", weight: "400" },
+    { path: "../../public/fonts/noto-500.woff2", weight: "500" },
+    { path: "../../public/fonts/noto-700.woff2", weight: "700" },
   ], variable: "--font-noto", display: "swap", preload: false,
 });
 const josefin = localFont({ src: [
-  { path: "../../public/fonts/josefin-400.ttf", weight: "400" },
-  { path: "../../public/fonts/josefin-600.ttf", weight: "600" },
-  { path: "../../public/fonts/josefin-700.ttf", weight: "700" },
+  { path: "../../public/fonts/josefin-400.woff2", weight: "400" },
+  { path: "../../public/fonts/josefin-600.woff2", weight: "600" },
+  { path: "../../public/fonts/josefin-700.woff2", weight: "700" },
 ], variable: "--font-josefin", display: "swap", preload: false });
 const blinker = localFont({ src: [
-  { path: "../../public/fonts/blinker-400.ttf", weight: "400" },
-  { path: "../../public/fonts/blinker-600.ttf", weight: "600" },
-  { path: "../../public/fonts/blinker-700.ttf", weight: "700" },
+  { path: "../../public/fonts/blinker-400.woff2", weight: "400" },
+  { path: "../../public/fonts/blinker-600.woff2", weight: "600" },
+  { path: "../../public/fonts/blinker-700.woff2", weight: "700" },
 ], variable: "--font-blinker", display: "swap", preload: false });
-const handwriting = localFont({ src: "../../public/fonts/hand.ttf", variable: "--font-handwriting", display: "swap", preload: false });
+const handwriting = localFont({ src: "../../public/fonts/hand.woff2", variable: "--font-handwriting", display: "swap", preload: false });
 
 export const metadata: Metadata = {
   title: "iPiFound X 鲲图智权",

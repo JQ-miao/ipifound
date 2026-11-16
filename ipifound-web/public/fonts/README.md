@@ -12,3 +12,7 @@ Figma's original 851tegakizatsu display titles/quotes are preserved as design
 artwork in public/design/results. Yomogi with Noto fallback is used for the
 remaining handwriting-style interface text. New characters may require
 regenerating the local subsets.
+
+Delivery uses losslessly compressed WOFF2 copies generated from these same TTF
+subsets by scripts/optimize-fonts.py (fontTools + Brotli). Copyright, glyphs,
+weights, coverage, and licensing are unchanged; the TTF source subsets remain.

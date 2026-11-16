@@ -3,7 +3,7 @@ import { LampDecor } from "@/components/layout/LampDecor";
 
 export function PageHeader({ active = "home" }: { active?: NavId }) {
   return (
-    <section className="relative z-20 bg-white">
+    <section className={`relative z-20 ${active === "projects" ? "bg-transparent" : "bg-white"}`}>
       <LampDecor large={active === "projects"} />
       <div className="relative">
         <SiteHeader active={active} />

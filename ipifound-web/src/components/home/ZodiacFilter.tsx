@@ -4,6 +4,7 @@ import { FindInventoryButton } from "@/components/home/FindInventoryButton";
 import { ZODIACS } from "@/lib/zodiacs";
 import { asset, link } from "@/lib/asset";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const ART = {
   rat: { x: 2, y: 200, w: 48.8339, h: 57.9611, pw: 100, ph: 118 },
@@ -21,11 +22,14 @@ const ART = {
 } as const;
 
 export function ZodiacFilter() {
+  const router = useRouter();
   const [selected, setSelected] = useState<string>("");
 
   return (
     <div id="zodiac" className="relative h-[466px] w-[1000px]">
       <img
+        loading="lazy"
+        decoding="async"
         src={asset("/figma/card-zodiac.svg")}
         alt=""
         width={1018.19}
@@ -42,7 +46,10 @@ export function ZodiacFilter() {
           请选择你的生肖，或是最贴合你品牌气质的生肖，当然你也可以有你执着的选择啦~
         </p>
 
-        <form action={link("/inventory/zodiac/")} className="mt-8">
+        <form action={link("/inventory/zodiac/")} className="mt-8" onSubmit={(event) => {
+          event.preventDefault();
+          if (selected) router.push(`/inventory/zodiac/?zodiac=${selected}`);
+        }}>
           <fieldset>
             <legend className="sr-only">生肖</legend>
             <div className="flex h-[226px] items-end justify-between">
@@ -59,11 +66,13 @@ export function ZodiacFilter() {
                     className="relative flex h-[226px] w-[54px] cursor-pointer flex-col items-center justify-end"
                   >
                     {selected === zodiac.id && <span aria-hidden className="pointer-events-none absolute top-0 left-0 h-[166px] w-[54px]">
-                      <img src={asset("/design/ui/select-beam.svg")} alt="" className="absolute top-[11px] left-[-1px] h-[156px] w-[56px] max-w-none mix-blend-darken" />
-                      <img src={asset("/design/ui/select-shadow.svg")} alt="" className="absolute top-[155px] left-[-1px] h-[11px] w-[55px] max-w-none mix-blend-darken" />
-                      <img src={asset("/design/ui/select-lamp.svg")} alt="" className="absolute top-[-1px] left-[13px] h-[25px] w-[29px] max-w-none" />
+                      <img loading="lazy" decoding="async" src={asset("/design/ui/select-beam.svg")} alt="" className="absolute top-[11px] left-[-1px] h-[156px] w-[56px] max-w-none mix-blend-darken" />
+                      <img loading="lazy" decoding="async" src={asset("/design/ui/select-shadow.svg")} alt="" className="absolute top-[155px] left-[-1px] h-[11px] w-[55px] max-w-none mix-blend-darken" />
+                      <img loading="lazy" decoding="async" src={asset("/design/ui/select-lamp.svg")} alt="" className="absolute top-[-1px] left-[13px] h-[25px] w-[29px] max-w-none" />
                     </span>}
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={asset(`/figma/zodiacs/${zodiac.id}.png`)}
                       alt=""
                       width={displayW}
@@ -85,6 +94,8 @@ export function ZodiacFilter() {
                         className="peer sr-only"
                       />
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={asset("/figma/radio-off.svg")}
                         alt=""
                         width={20}
@@ -92,6 +103,8 @@ export function ZodiacFilter() {
                         className="absolute inset-0 size-5 peer-checked:hidden peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-radio"
                       />
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={asset("/figma/radio-on.svg")}
                         alt=""
                         width={20}

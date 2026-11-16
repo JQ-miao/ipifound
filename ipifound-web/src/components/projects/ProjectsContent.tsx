@@ -23,9 +23,8 @@ export function ProjectsContent({ category }: { category: ProjectCategoryId }) {
   const page = category === "trademark" && params.get("page") === "2" ? 2 : 1;
   const key = page === 2 ? "trademark2" : category;
   return (
-    <main className="relative -mt-[112px] h-[2558px] w-[1440px] overflow-hidden text-ink">
+    <>
       <h1 className="sr-only">IP ZOOM — {PROJECT_CATEGORIES.find((item) => item.id === category)?.label}案例</h1>
-      <ProjectArtwork layers={artwork.scenery as ArtworkLayer[]} />
       <ProjectArtwork layers={artwork.categories[key] as ArtworkLayer[]} />
       <nav aria-label="案例分类" className="absolute top-[749px] left-[146px] z-10 flex w-[190px] flex-col gap-[20px]">
         {PROJECT_CATEGORIES.map((item) => <Link key={item.id} href={`/projects/?cat=${item.id}`} scroll={false} aria-current={category === item.id ? "page" : undefined} className={`font-hand flex h-[73px] items-center justify-center rounded-[8px] border-4 border-ink px-[10px] text-[24px] leading-none whitespace-nowrap transition-colors hover:bg-radio hover:text-white ${category === item.id ? "bg-radio text-white" : "bg-[#fef1df] text-ink"}`}>{item.label}</Link>)}
@@ -36,6 +35,6 @@ export function ProjectsContent({ category }: { category: ProjectCategoryId }) {
         {[1, 2].map((n) => <Link key={n} href={`/projects/?cat=trademark&page=${n}`} scroll={false} aria-label={`第 ${n} 页`} aria-current={n === page ? "page" : undefined} className={`project-page ${n === page ? "bg-lucky-yellow" : "bg-white"}`}>{n}</Link>)}
         <Link href={`/projects/?cat=trademark&page=${page === 2 ? 2 : page + 1}`} scroll={false} aria-label="下一页" aria-disabled={page === 2} tabIndex={page === 2 ? -1 : undefined} className={`project-page ${page === 2 ? "pointer-events-none" : ""}`}>→</Link>
       </nav>}
-    </main>
+    </>
   );
 }

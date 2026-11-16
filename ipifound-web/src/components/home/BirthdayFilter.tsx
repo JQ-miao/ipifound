@@ -3,9 +3,11 @@
 import { FindInventoryButton } from "@/components/home/FindInventoryButton";
 import { asset, link } from "@/lib/asset";
 import { useState } from "react";
-import { isValidDate } from "@/lib/personalities";
+import { isValidDate } from "@/lib/date-personality";
+import { useRouter } from "next/navigation";
 
 export function BirthdayFilter() {
+  const router = useRouter();
   const [year, setYear] = useState("");
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
@@ -13,6 +15,8 @@ export function BirthdayFilter() {
   return (
     <div id="birthday" className="relative h-[292px] w-[1000px]">
       <img
+        loading="lazy"
+        decoding="async"
         src={asset("/figma/card-birthday.svg")}
         alt=""
         width={1018.19}
@@ -30,11 +34,13 @@ export function BirthdayFilter() {
         </p>
 
         <form action={link("/inventory/")} className="mt-6 w-[598px]" onSubmit={(event) => {
+          event.preventDefault();
           if (!isValidDate(year, month, day)) {
-            event.preventDefault();
             const field = event.currentTarget.elements.namedItem("day") as HTMLInputElement;
             field.setCustomValidity("请填写有效的日期，例如 2026 年 11 月 16 日");
             field.reportValidity();
+          } else {
+            router.push(`/inventory/?${new URLSearchParams({ year, month, day })}`);
           }
         }} onInput={(event) => {
           const form = event.currentTarget;
@@ -78,6 +84,8 @@ export function BirthdayFilter() {
       </div>
 
       <img
+        loading="lazy"
+        decoding="async"
         src={asset("/figma/birthday-mascot.png")}
         alt=""
         width={236.162}

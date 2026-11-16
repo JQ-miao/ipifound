@@ -1,10 +1,12 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { preload } from "react-dom";
 import { SiteHeader } from "./SiteHeader";
 import { asset } from "@/lib/asset";
 
 export function Hero() {
+  preload(asset("/videos/hero-poster.jpg"), { as: "image", fetchPriority: "high" });
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -29,7 +31,7 @@ export function Hero() {
         src={asset("/videos/hero.mp4")}
         poster={asset("/videos/hero-poster.jpg")}
         playsInline
-        preload="auto"
+        preload="none"
         disablePictureInPicture
         disableRemotePlayback
         controls={false}
