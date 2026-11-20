@@ -1,5 +1,6 @@
 import { asset } from "@/lib/asset";
 import type { ProjectCaseArtwork } from "@/lib/design/project-cases";
+import type { CSSProperties } from "react";
 
 /**
  * Artwork page fills — must match page.png (not pure white),
@@ -8,6 +9,15 @@ import type { ProjectCaseArtwork } from "@/lib/design/project-cases";
 const PAGE_BG = "#f7f6f6";
 const INTRO_BG = "#f9ff58";
 const CARD_BG = "#f9ff58";
+
+/** Per-line fill knocks out baked page.png glyphs without a solid plate covering doodles. */
+const introLineFill: CSSProperties = {
+  backgroundColor: INTRO_BG,
+  boxDecorationBreak: "clone",
+  WebkitBoxDecorationBreak: "clone",
+  padding: "0 6px",
+  margin: "0 -6px",
+};
 
 /**
  * Full Figma case frame with HTML copy overlays.
@@ -19,8 +29,8 @@ const CARD_BG = "#f9ff58";
 export function CaseArtwork({ data }: { data: ProjectCaseArtwork }) {
   const { layout: L } = data;
   const introTop = L.introY - 4;
-  const introBottom = L.creditY + 36;
-  const introHeight = introBottom - introTop;
+  /** Stop above credit — credit + rule stay in page.png (HTML overlay caused a doubled「权」). */
+  const introHeight = L.creditY - introTop - 28;
   /** Keep concept copy above feature cards — a taller plate would paint grey over yellow cards. */
   const conceptMaxH = Math.max(L.featureCardAY - L.conceptBodyY - 12, 120);
   /** Keep details copy above the gallery band (~244px below title in Figma). */
@@ -60,32 +70,24 @@ export function CaseArtwork({ data }: { data: ProjectCaseArtwork }) {
         </p>
       </div>
 
-      {/* Intro column — lucky-yellow plate flush with section (no radius/border) */}
+      {/* Intro column — transparent shell; line fills only, so corner doodles stay visible */}
       <section
         aria-label="项目介绍"
         className="absolute z-[2]"
-        style={{ left: 560, top: introTop, width: 780, height: introHeight, background: INTRO_BG }}
+        style={{ left: 560, top: introTop, width: 780, height: introHeight }}
       >
         <div className="font-display ml-[10px] mt-[4px] w-[750px] text-[16px] leading-[24px] font-medium text-justify text-black">
           {data.introBody.map((paragraph, index) => (
             <p
               key={index}
               className={index < data.introBody.length - 1 ? "mb-[24px]" : undefined}
+              style={introLineFill}
             >
               {paragraph}
             </p>
           ))}
         </div>
-        <div
-          className="absolute h-px bg-[#1e1e1e]"
-          style={{ left: 10, width: 750, top: L.creditY - introTop - 24 }}
-        />
-        <p
-          className="font-display absolute text-[16px] leading-[24px] font-medium text-black"
-          style={{ left: 10, top: L.creditY - introTop }}
-        >
-          {data.credit}
-        </p>
+        <p className="sr-only">{data.credit}</p>
       </section>
 
       {/* Concept body — page-bg plate, no border/radius; height clamped above feature cards */}
