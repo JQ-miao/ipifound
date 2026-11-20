@@ -7,8 +7,15 @@ import type { ProjectCategoryId } from "@/components/projects/ProjectsContent";
  */
 export type ProjectHotspot = {
   category: ProjectCategoryId;
+  /**
+   * Trademark list spans two artwork pages. Hotspots only apply on the matching page
+   * (page 2 must not reuse page-1 coordinates — that linked the wrong icons).
+   */
+  page?: 1 | 2;
   /** Optional basename hint when the list icon is a flat software/*.webp. */
   thumb?: string;
+  /** Figma list_logo_* circle drawn over the tree hole (puts detail cases up front). */
+  cover?: string;
   slug: string;
   x: number;
   y: number;
@@ -17,11 +24,15 @@ export type ProjectHotspot = {
   label: string;
 };
 
+const TM = "/design/projects/hotspots";
+
 /** Hotspots currently matched to detail pages. */
 export const PROJECT_HOTSPOTS: ProjectHotspot[] = [
-  // —— Trademark (Figma list_logo_* → page1 grid) ——
+  // —— Trademark: four logos with details, front of page-1 grid ——
   {
     category: "trademark",
+    page: 1,
+    cover: `${TM}/visioncareer.png`,
     slug: "visioncareer",
     x: 341,
     y: 867,
@@ -31,6 +42,8 @@ export const PROJECT_HOTSPOTS: ProjectHotspot[] = [
   },
   {
     category: "trademark",
+    page: 1,
+    cover: `${TM}/antclump-01.png`,
     slug: "antclump-01",
     x: 648,
     y: 867,
@@ -40,6 +53,8 @@ export const PROJECT_HOTSPOTS: ProjectHotspot[] = [
   },
   {
     category: "trademark",
+    page: 1,
+    cover: `${TM}/antclump-02.png`,
     slug: "antclump-02",
     x: 955,
     y: 867,
@@ -49,6 +64,8 @@ export const PROJECT_HOTSPOTS: ProjectHotspot[] = [
   },
   {
     category: "trademark",
+    page: 1,
+    cover: `${TM}/lantucloud.png`,
     slug: "lantucloud",
     x: 341,
     y: 1205,
@@ -167,6 +184,11 @@ export const LIST_ICONS_WITHOUT_DETAIL = [
   "app_fengtian.webp",
 ] as const;
 
-export function hotspotsForCategory(category: ProjectCategoryId): ProjectHotspot[] {
-  return PROJECT_HOTSPOTS.filter((item) => item.category === category);
+export function hotspotsForCategory(
+  category: ProjectCategoryId,
+  page: 1 | 2 = 1,
+): ProjectHotspot[] {
+  return PROJECT_HOTSPOTS.filter(
+    (item) => item.category === category && (item.page == null || item.page === page),
+  );
 }

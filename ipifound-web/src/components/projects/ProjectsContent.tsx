@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ProjectArtwork, type ArtworkLayer } from "@/components/projects/ProjectArtwork";
+import { asset } from "@/lib/asset";
 import artwork from "@/lib/design/projects.json";
 import { hotspotsForCategory } from "@/lib/design/project-hotspots";
 import { OutlinedLabel } from "@/components/ui/OutlinedLabel";
@@ -24,7 +25,7 @@ export function ProjectsContent({ category }: { category: ProjectCategoryId }) {
   const params = useSearchParams();
   const page = category === "trademark" && params.get("page") === "2" ? 2 : 1;
   const key = page === 2 ? "trademark2" : category;
-  const hotspots = hotspotsForCategory(category);
+  const hotspots = hotspotsForCategory(category, page);
   return (
     <>
       <h1 className="sr-only">IP ZOOM — {PROJECT_CATEGORIES.find((item) => item.id === category)?.label}案例</h1>
@@ -34,9 +35,20 @@ export function ProjectsContent({ category }: { category: ProjectCategoryId }) {
           key={spot.slug}
           href={`/projects/${spot.slug}/`}
           aria-label={`查看案例：${spot.label}`}
-          className="absolute z-10 rounded-full transition-[box-shadow] duration-200 hover:shadow-[0_0_0_4px_var(--lucky-yellow),0_0_20px_8px_rgba(249,255,88,0.45)] focus-visible:shadow-[0_0_0_4px_var(--lucky-yellow),0_0_20px_8px_rgba(249,255,88,0.45)] focus-visible:outline-none"
+          className="absolute z-10 overflow-hidden rounded-full transition-[box-shadow] duration-200 hover:shadow-[0_0_0_4px_var(--lucky-yellow),0_0_20px_8px_rgba(249,255,88,0.45)] focus-visible:shadow-[0_0_0_4px_var(--lucky-yellow),0_0_20px_8px_rgba(249,255,88,0.45)] focus-visible:outline-none"
           style={{ left: spot.x, top: spot.y, width: spot.w, height: spot.h }}
-        />
+        >
+          {spot.cover ? (
+            <img
+              src={asset(spot.cover)}
+              alt=""
+              aria-hidden
+              className="pointer-events-none size-full object-cover"
+              width={spot.w}
+              height={spot.h}
+            />
+          ) : null}
+        </Link>
       ))}
       <nav aria-label="案例分类" className="absolute top-[749px] left-[146px] z-10 flex w-[190px] flex-col gap-[20px]">
         {PROJECT_CATEGORIES.map((item) => <Link key={item.id} href={`/projects/?cat=${item.id}`} scroll={false} aria-current={category === item.id ? "page" : undefined} className={`flex h-[73px] items-center justify-center rounded-[8px] border-4 border-ink px-[10px] leading-none whitespace-nowrap transition-colors hover:bg-radio hover:text-white ${category === item.id ? "bg-radio text-white" : "bg-[#fef1df] text-ink"}`}><OutlinedLabel name={`category-${item.id}`} /></Link>)}
